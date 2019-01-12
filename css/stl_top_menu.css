@@ -2,6 +2,8 @@
     border-bottom-width: 1px ;
     border-bottom-style: solid ;
     border-bottom-color: blue;
+    cursor: pointer;
+    height: 8vh;
 }
 
 
@@ -16,6 +18,12 @@
     color: blue;
     font-weight: bold;
     text-align: center;
+    height: 8vh;
+}
+
+[id*="tm_item-"]:hover{
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
 [id*="tm_item-"] a{
