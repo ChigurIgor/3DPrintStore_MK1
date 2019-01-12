@@ -1,0 +1,13 @@
+#header{
+    background: blue;
+    min-height: 18vh;
+    color: white;
+    font-size: 3em;
+}
+
+#header img{
+     height: 3em;
+     width: 3em;
+     background: whitesmoke;
+ }
+

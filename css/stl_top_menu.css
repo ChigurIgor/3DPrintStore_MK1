@@ -1,0 +1,24 @@
+#top_menu{
+
+}
+
+
+
+
+[id*="tm_item-"]{
+    border-right: blue;
+    border-right-style: solid;
+    border-right-width: 1px;
+    font-size: 1.2em;
+    color: blue;
+    font-weight: bold;
+    text-align: center;
+}
+
+#tm_item-6{
+    border-right: transparent;
+}
+
+[id*="tm_item-"] p{
+padding-top: 10%
+}
