@@ -1,5 +1,7 @@
 #topMenu{
-
+    border-bottom-width: 1px ;
+    border-bottom-style: solid ;
+    border-bottom-color: blue;
 }
 
 
@@ -9,10 +11,15 @@
     border-right: blue;
     border-right-style: solid;
     border-right-width: 1px;
+
     font-size: 1.2em;
     color: blue;
     font-weight: bold;
     text-align: center;
+}
+
+[id*="tm_item-"] a{
+    color: blue;
 }
 
 #tm_item-6{
