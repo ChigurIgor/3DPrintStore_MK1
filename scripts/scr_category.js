@@ -1,7 +1,7 @@
 var desTitle="";
 var desCont="";
 var itemsInside=0;
-var itemsInLine=5;
+var itemsInLine=4;
 var dir="";
         dir="categories/xiaomi_mijia_365";
 
@@ -19,24 +19,24 @@ function createCategory() {
     }
 
     if(end=="1"){
-        desTitle=NTTL_1;
+        desTitle=itemTitle_1;
         desCont=NCNTNT_1;
         itemsInside=2;
     }
     if(end=="2"){
-        desTitle=NTTL_2;
+        desTitle=itemTitle_2;
         desCont=NCNTNT_2;
         itemsInside=3;
 
     }
     if(end=="3"){
-        desTitle=NTTL_3;
+        desTitle=itemTitle_3;
         desCont=NCNTNT_3;
         itemsInside=4;
 
     }
     if(end=="4"){
-        desTitle=NTTL_4;
+        desTitle=itemTitle_4;
         desCont=NCNTNT_4;
         itemsInside=5;
 
@@ -106,10 +106,10 @@ function createItems() {
 
 
     var titles = [];
-    titles.push(NTTL_1);
-    titles.push(NTTL_2);
-    titles.push(NTTL_3);
-    titles.push(NTTL_4);
+    titles.push(itemTitle_1);
+    titles.push(itemTitle_2);
+    titles.push(itemTitle_3);
+    titles.push(itemTitle_4);
 
     var prices=[];
     prices.push(price_1);
@@ -354,11 +354,11 @@ var price_4="400";
 
 // ---------------------------------------------------------------------- News 1 -----------------------------------------------------------------------
 
-var item="Girls first job.";
+var itemTitle_1="Girls first job.";
 var NCNTNT_1="They chose for a long time and finally made their first order in Israel.";
 // ---------------------------------------------------------------------- News 2 -----------------------------------------------------------------------
 
-var NTTL_2="Wall painting to solve interior problems";
+var itemTitle_2="Wall painting to solve interior problems";
 var NCNTNT_2="Ideas of interior design today are very diverse, which allows you to create a truly individual image of your home or office. A whole series of interesting ideas serves not only to decorate the situation and express individuality in it, but also to solve specific problems: disproportionality, abundance of angles, shading, etc. Wall painting allows you to diversify the situation, create a unique color in it and at the same time optimize the layout.\n" +
     "\<br>" +
     "\<br>" +
@@ -372,7 +372,7 @@ var NCNTNT_2="Ideas of interior design today are very diverse, which allows you 
     "Premises of irregular shape are well corrected with the help of murals that help to expand the space, level the corners, and give depth where necessary. For example, the image of a window with a flowering landscape creates an amazing atmosphere of comfort, helps to avoid a standard approach to creating a harmonious environment. At the same time, the artistic painting of the walls is suitable for both spacious rooms and rooms of a small area: depending on the free space, the plot, the technique of execution, the color scheme are selected. As a result, a small room will seem more spacious, and in the free space of a large room will not “eat” its visitor. Amazing in its effects is the result of painting not only the walls, but also ceilings, interior items. In this case, the situation acquires a truly unique opportunity to achieve specific impressions: the choice can be guided by both personal preferences and professional advice of the artist. Creating a unique atmosphere in the house largely depends on how you approach the design of the accessible area and the zoning of the space, so painting the walls is a unique opportunity to make the interior your faithful assistant!";
 // ---------------------------------------------------------------------- News 3 -----------------------------------------------------------------------
 
-var NTTL_3="Games of color. How can they help marketers and advertisers?";
+var itemTitle_3="Games of color. How can they help marketers and advertisers?";
 var NCNTNT_3="Color - physiological. It affects through the pituitary gland on the human vascular system, causing appropriate emotional reactions. The first serious research in this field was conducted more than half a century ago by psychologist Karl Flehingaus and psychiatrist Max Luscher.\n" +
     "Using the method, you can set the parameters and characteristics of the target audience and get the main colors of the impact.\n" +
     "Using the method, you can set the parameters and characteristics of the target audience and get the main colors of the impact.\n" +
@@ -428,5 +428,5 @@ var NCNTNT_3="Color - physiological. It affects through the pituitary gland on t
     "There are so-called compensatory colors that provide relief of emotional tension - separate for each sex and age group. So, lilac is compensatory for all women from puberty to menopause. An array of this color has become the main selling element of the Vitalinia brand. As Nicolas Koro says, “the task was to create a line of dairy products for women. If the product directly, verbally appealed to the female audience, it is unlikely to bring results. Only a certain shade of lilac could solve this problem - by default. Does this mean that all women like this color? Not. Moreover, business-oriented women do not accept it in their wardrobe at all. But the external manifestation of loyalty to color and the internal perception of color, the need for it are different things, ”says Koro. It is for this reason that the “fashionable colors”, which are the hit of the season, do not affect the subconscious choice of the consumer.";
 // ---------------------------------------------------------------------- News 4 -----------------------------------------------------------------------
 
-var NTTL_4="Girls first job.";
+var itemTitle_4="Girls first job.";
 var NCNTNT_4="They chose for a long time and finally made their first order in Israel.";
