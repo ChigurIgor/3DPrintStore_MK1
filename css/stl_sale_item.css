@@ -1,0 +1,119 @@
+
+[id*="ctlg_item-"]{
+    position: relative;
+    /*height: 30vh;*/
+    padding: 5%;
+}
+
+[id*="ctlg_item-"]:hover{
+    position: relative;
+    /*height: 30vh;*/
+    background-color: rgb(135, 252, 245);
+}
+
+
+
+[id*="ctlg_item-"] img{
+    width: 100%;
+    height: 50vh;
+    cursor: pointer;
+
+
+}
+
+.item_ttl{
+    color: blue;
+    margin: 1em;
+    font-size: 1.5em;
+}
+
+.item_price{
+color: red;
+    margin: 0 1em 1em 1em;
+    font-size: 1.5em;
+}
+
+
+.btn_cart {
+    height: 10vh;
+    width: 10vh;
+    cursor: pointer;
+}
+
+.btn_cart:hover{
+ transform: scale(1.2);
+}
+
+.btn_cart:active{
+    transform: translateY(1em) scale(1.1);;
+}
+
+#add{
+    color: green;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 0 3vh 0 3vh;
+    cursor: pointer;
+}
+#addRow{
+    width: 100%;
+    text-align: center;
+    border-color: gray;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2vh;
+    margin: 0;
+}
+#addRow:hover{
+    background-color: #9cff94;
+}
+#addRow:active{
+    background-color: #87e77f;
+    transform: translateY(1vh);
+}
+
+#count{
+    color: blue;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 0 3vh 0 3vh;
+
+
+}
+#countRow{
+    width: 100%;
+    text-align: center;
+    border-color: gray;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 2vh;
+    margin: 0;
+}
+
+#decr{
+    color: red;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 0 3vh 0 3vh;
+    cursor: pointer;
+
+
+}
+#decrRow{
+    border-color: gray;
+    border-style: solid;
+    border-width: 2px;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 2vh;
+
+}
+#decrRow:hover{
+    background-color: #ffa7a3;
+}
+
+#decrRow:active{
+    background-color: #e59693;
+    transform: translateY(1vh);
+}

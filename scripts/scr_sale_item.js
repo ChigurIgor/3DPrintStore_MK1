@@ -102,21 +102,48 @@ var j=0;
 
 
 
-            var div = document.createElement('div');
-            div.className=clsType;
-            div.id="item-"+itemId;
-
-            div.innerHTML =
-                "                                    <div class=\"row\" id=\"ctlg_item-"+index+"\"  onclick=\"openNews(id)\">\n" +
-                "                                        <div class=\"col-12\"> " +
-                "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt=\"sdf\"></div>\n" +
-                "<div class='row'> <p class=\"item_ttl\">"+titles[index]+"</p></div>" +
-                "<div class='row'> <p class=\"item_price\">"+prices[index]+"</p></div>" +
-  "                            </div>";
 
 
+            divRow.innerHTML ="                <div class=\"col-6\">\n" +
+                "                    <div id= \"ctlg_item-1\" class=\"row\">\n" +
+                "                    <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\">\n" +
+                "                    </div>\n" +
+                "                </div>\n" +
+                "                <div class=\"col-6\">\n" +
+                "                    <div class=\"row\">\n" +
+                "                        <p class=\"item_ttl\">"+titles[index]+"</p>\n" +
+                "                    </div>\n" +
+                "                    <div class=\"row\">\n" +
+                "                        <p class=\"item_price\">"+prices[index]+" NIS</p>\n" +
+                "                    </div>\n" +
+                "                    <div class=\"row\">\n" +
+                "                        <div class=\"col-5\">\n" +
+                "                            <div class=\"row\">\n" +
+                "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\"><p>+</p></div> </div></div>\n" +
+                "                                <div id=\"count\" class=\"col-4\"><div class=\"row\"><div id=\"countRow\"><p>1</p></div> </div></div>\n" +
+                "                                <div id=\"decr\" class=\"col-4\"><div class=\"row\"><div id=\"decrRow\"><p>-</p></div> </div></div>\n" +
+                "                            </div>\n" +
+                "                        </div>\n" +
+                "\n" +
+                "                        <div class=\"col-6 offset-1\">\n" +
+                "                            <div class=\"row\"><img class=\"btn_cart\" src=\"images/support/icon_cart_add.png\" alt=\"Add to cart\"></div>\n" +
+                "                        </div>\n" +
+                "                        <!--<p \">Add to cart</p>-->\n" +
+                "                    </div>\n" +
+                "\n" +
+                "                </div>";
 
-            divRow.appendChild(div);
+  // div.innerHTML =
+  //               "                                    <div class=\"row\" id=\"ctlg_item-"+index+"\"  onclick=\"openNews(id)\">\n" +
+  //               "                                        <div class=\"col-12\"> " +
+  //               "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt=\"sdf\"></div>\n" +
+  //               "<div class='row'> <p class=\"item_ttl\">"+titles[index]+"</p></div>" +
+  //               "<div class='row'> <p class=\"item_price\">"+prices[index]+"</p></div>" +
+  // "                            </div>";
+
+
+
+            // divRow.appendChild(div);
 
 
 
