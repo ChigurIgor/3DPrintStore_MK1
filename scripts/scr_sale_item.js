@@ -1,56 +1,48 @@
 var desTitle="";
 var itemsInside=0;
-var itemsInLine=4;
+var itemsInLine=1;
 var catId="";
 var itemId="";
 var dir="";
-        dir="categories/xiaomi_mijia_365";
 
 
-function createCategory() {
+
+function createItem() {
 
     var queryString = decodeURIComponent(window.location.search);
     queryString = queryString.substring(1);
     var queries = queryString.split("&");
-    for (var i = 0; i < queries.length; i++)
-    {
-        var end = parseInt(queries[i].split("=")[1],10);
-        catId=end;
-        alert(catId);
-        // document.write(end + "<br>");
-    }
 
-    if(end=="1"){
-        desTitle=itemTitle_1;
-        itemsInside=2;
-    }
-    if(end=="2"){
-        desTitle=itemTitle_2;
-        itemsInside=3;
 
-    }
-    if(end=="3"){
-        desTitle=itemTitle_3;
-        itemsInside=4;
+    catId= parseInt(queries[0].split("=")[1],10);
+    itemId= parseInt(queries[1].split("=")[1],10);
 
-    }
-    if(end=="4"){
-        desTitle=itemTitle_4;
-        itemsInside=5;
 
+
+    if(catId=="1"){
+        dir="categories/xiaomi_mijia_365";
+    }
+    if(catId=="2"){
+        dir="categories/xiaomi_mijia_365";
+    }
+    if(catId=="3"){
+        dir="categories/xiaomi_mijia_365";
+    }
+    if(catId=="4"){
+        dir="categories/xiaomi_mijia_365";
     }
 
 
 
 
 
-    createItems();
+    createItemsContent();
 
 }
 
 
 
-function createItems() {
+function createItemsContent() {
 
 
     var titles = [];
@@ -99,24 +91,21 @@ function createItems() {
 
 
 
-    for(i=0; i<itemsInside;i += itemsInLine) {
-        // alert("i= "+i);
+
 
 
         var divRow = document.createElement('div');
         divRow.className="row";
 
 var j=0;
-        var index=0;
-        for(j=0;j<itemsInLine; j+=1){
-            // alert("j= "+j);
-            index=i+j;
-            // alert("index= "+index);
+        var index=itemId;
+
+
+
             var div = document.createElement('div');
             div.className=clsType;
-            div.id="item-"+index;
+            div.id="item-"+itemId;
 
-            if(index<itemsInside){
             div.innerHTML =
                 "                                    <div class=\"row\" id=\"ctlg_item-"+index+"\"  onclick=\"openNews(id)\">\n" +
                 "                                        <div class=\"col-12\"> " +
@@ -128,8 +117,8 @@ var j=0;
 
 
             divRow.appendChild(div);
-            }
-        }
+
+
 
 
 
@@ -140,7 +129,7 @@ var j=0;
 
 
 
-    }
+
 
 
 
