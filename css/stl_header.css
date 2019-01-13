@@ -16,9 +16,28 @@
     font-size: 3em;
 }
 
-#header img{
+#logo img{
      height: 15vh;
      width: 15vh;
      background: whitesmoke;
  }
 
+#mCart img{
+    height: 10vh;
+    width: 10vh;
+}
+
+#mCart img:hover{
+    transform: scale(1.2);
+}
+#mCart img:active{
+transform: translateY(1em)}
+
+#mCart p{
+    padding-top: 5vh;
+    padding-left: 1em;
+}
+
+#mDeliv{
+    padding-top: 5vh;
+}
