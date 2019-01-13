@@ -1,7 +1,9 @@
 var desTitle="";
 var desCont="";
-var newsInside=3;
-
+var itemsInside=0;
+var itemsInLine=5;
+var dir="";
+        dir="categories/xiaomi_mijia_365";
 
 
 function createCategory() {
@@ -19,24 +21,24 @@ function createCategory() {
     if(end=="1"){
         desTitle=NTTL_1;
         desCont=NCNTNT_1;
-        newsInside=2;
+        itemsInside=2;
     }
     if(end=="2"){
         desTitle=NTTL_2;
         desCont=NCNTNT_2;
-        newsInside=3;
+        itemsInside=3;
 
     }
     if(end=="3"){
         desTitle=NTTL_3;
         desCont=NCNTNT_3;
-        newsInside=4;
+        itemsInside=4;
 
     }
     if(end=="4"){
         desTitle=NTTL_4;
         desCont=NCNTNT_4;
-        newsInside=5;
+        itemsInside=5;
 
     }
 
@@ -101,92 +103,174 @@ function createCategory() {
 
 
 function createItems() {
-    var xx=0;
-    var yy=0;
-    var rowCount=1;
-
-    dir="";
-    dir="categories/xiaomi_mijia_365";
 
 
-    countImg=(newsInside/2)-1;
+    var titles = [];
+    titles.push(NTTL_1);
+    titles.push(NTTL_2);
+    titles.push(NTTL_3);
+    titles.push(NTTL_4);
+
+    var prices=[];
+    prices.push(price_1);
+    prices.push(price_2);
+    prices.push(price_3);
+    prices.push(price_4);
+
+
+
+    // var xx=0;
+    // var yy=0;
+    // var rowCount=1;
     i=0;
-    for(i=0; i<newsInside;i += 2) {
-        var div = document.createElement('div');
-        // div.className = "alert alert-success";
-        // xx=((2*i)+1);
-        xx=i+1;
-        yy=xx+1;
+
+    var clsType="col-6";
+    switch (itemsInLine) {
+        case 1:
+            clsType="col-12";
+            break;
+        case 2:
+            clsType="col-6";
+            break;
+        case 3:
+            clsType="col-4";
+            break;
+        case 4:
+            clsType="col-3";
+            break;
+        case 5:
+            clsType="col-2";
+            break;
+        case 6:
+            clsType="col-2";
+            break;
+
+    }
 
 
-        var desTitle1="";
-        var desTitle2="";
 
-        switch (xx) {
-            case 1:
-                desTitle1=NTTL_1;
-                break;
-            case 2:
-                desTitle1=NTTL_2;
-                break;
-            case 3:
-                desTitle1=NTTL_3;
-                break;
-            case 4:
-                desTitle1=NTTL_4;
-                break;
-            default:
+    for(i=0; i<itemsInside;i += itemsInLine) {
+        // alert("i= "+i);
+
+
+        var divRow = document.createElement('div');
+        divRow.className="row";
+        // divRow.innerHTML = "<div class=\"row\">\n" +
+        //     "                            </div>";
+var j=0;
+        var index=0;
+        for(j=0;j<itemsInLine; j+=1){
+            // alert("j= "+j);
+            index=i+j+1;
+            // alert("index= "+index);
+            var div = document.createElement('div');
+            div.className=clsType;
+            div.id="item-"+index;
+
+            if(index<=itemsInside){
+            div.innerHTML =
+                "                                    <div class=\"row\" id=\"ctlg_item-"+index+"\"  onclick=\"openNews(id)\">\n" +
+                "                                        <div class=\"col-12\"> " +
+                "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt=\"sdf\"></div>\n" +
+                "<div class='row'> <p class=\"item_ttl\">"+titles[index]+"</p></div>" +
+                "<div class='row'> <p class=\"item_price\">"+prices[index]+"</p></div>" +
+  "                            </div>";
+
+
+
+            divRow.appendChild(div);
+            }
         }
-        switch (yy) {
-            case 1:
-                desTitle2=NTTL_1;
-                break;
-            case 2:
-                desTitle2=NTTL_2;
-                break;
-            case 3:
-                desTitle2=NTTL_3;
-                break;
-            case 4:
-                desTitle2=NTTL_4;
-                break;
-            default:
-        }
 
 
-        div.innerHTML = "                        <div class=\"row\">\n" +
-            "                            <div id=\"item4-"+xx+"\" class=\"col-6\">\n" +
-            "                                <div class=\"container\">\n" +
-            "                                    <div class=\"row\" id=\"ctlg_item-"+xx+"\"  onclick=\"openNews(id)\">\n" +
-            "                                        <div class=\"col-6\"> <img class=\"item_img\" src=\"images/"+dir+"/"+xx+".jpg\" alt=\"sdf\"></div>\n" +
-            "                                            <div class=\"col-6\"><p class=\"item_ttl\">"+desTitle1+"</p></div>\n" +
-            "                                    </div>\n" +
-            "\n" +
-            "                                </div>\n" +
-            "                            </div>\n" +
-            "                            <div id=\"item8-"+xx+"\" class=\"col-6\">\n" +
-            "                                <div class=\"container\">\n" +
-            "                                    <div class=\"row\" id=\"ctlg_item-"+yy+"\"  onclick=\"openNews(id)\">\n" +
-            "                                        <div class=\"col-6\"> <img class=\"item_img\" src=\"images/"+dir+"/"+yy+".jpg\"></div>\n" +
-            "                                        <div class=\"col-6\"><p class=\"item_ttl\">"+desTitle2+"</p></div>\n" +
-            "                                    </div>\n" +
-            "\n" +
-            "                                </div>\n" +
-            "                            </div>\n" +
-            "                        </div>";
+        // // xx=i+1;
+        // // yy=xx+1;
 
 
-        if(yy>newsInside) {
-            div.innerHTML = "                        <div class=\"row\">\n" +
-                "                            <div id=\"item8-"+xx+"\" class=\"col-6 offset-3\">\n" +
-                "                                <div class=\"container\">\n" +
-                "                                    <div class=\"row\" id=\"ctlg_item-"+xx+"\"  onclick=\"openNews(id)\">\n" +
-                "                                        <div class=\"col-6\"> <img class=\"item_img\" src=\"images/"+dir+"/"+xx+".jpg\"></div>\n" +
-                "                                            <div class=\"col-6\"><p class=\"item_ttl\">"+desTitle1+"</p></div>\n" +
-                "                                    </div>\n" +
-                "                            </div>\n" +
-                "                        </div>";
-        }
+        // var desTitle1="";
+        // var desTitle2="";
+        // var desPrice1="";
+        // var desPrice2="";
+        // var desTitle2="";
+        //
+        //
+        // desPrice1=xx*100;
+        // desPrice2=yy*100;
+        // switch (xx) {
+        //     case 1:
+        //         desTitle1=NTTL_1;
+        //          break;
+        //     case 2:
+        //         desTitle1=NTTL_2;
+        //         break;
+        //     case 3:
+        //         desTitle1=NTTL_3;
+        //         break;
+        //     case 4:
+        //         desTitle1=NTTL_4;
+        //         break;
+        //     default:
+        // }
+        // switch (yy) {
+        //     case 1:
+        //         desTitle2=NTTL_1;
+        //         break;
+        //     case 2:
+        //         desTitle2=NTTL_2;
+        //         break;
+        //     case 3:
+        //         desTitle2=NTTL_3;
+        //         break;
+        //     case 4:
+        //         desTitle2=NTTL_4;
+        //         break;
+        //     default:
+        // }
+
+
+
+
+
+
+        //
+        // div.innerHTML = "                        <div class=\"row\">\n" +
+        //     "                            <div id=\"item-"+xx+"\" class=\"col-6\">\n" +
+        //     "                                    <div class=\"row\" id=\"ctlg_item-"+xx+"\"  onclick=\"openNews(id)\">\n" +
+        //     "                                        <div class=\"col-12\"> " +
+        //     "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+xx+".jpg\" alt=\"sdf\"></div>\n" +
+        //     "<div class='row'> <p class=\"item_ttl\">"+desTitle1+"</p></div>" +
+        //     "<div class='row'> <p class=\"item_price\">"+desPrice1+"</p></div>" +
+        //
+        //     "</div>\n" +
+        //     "\n" +
+        //     "                                </div>\n" +
+        //     "                            </div>\n" +
+        //     "                            <div id=\"item-"+yy+"\" class=\"col-6\">\n" +
+        //     "                                    <div class=\"row\" id=\"ctlg_item-"+yy+"\"  onclick=\"openNews(id)\">\n" +
+        //     "                                        <div class=\"col-12\"> " +
+        //     "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+yy+".jpg\" alt=\"sdf\"></div>\n" +
+        //     "<div class='row'> <p class=\"item_ttl\">"+desTitle2+"</p></div>" +
+        //     "<div class='row'> <p class=\"item_price\">"+desPrice2+"</p></div>" +
+        //
+        //     "</div>\n" +
+        //     "                                </div>\n" +
+        //     "                            </div>";
+        //
+        //
+        // if(yy>itemsInside) {
+        //     div.innerHTML = "                     <div class=\"row\">\n" +
+        //         "                            <div id=\"item-"+xx+"\" class=\"col-6\">\n" +
+        //         "                                    <div class=\"row\" id=\"ctlg_item-"+xx+"\"  onclick=\"openNews(id)\">\n" +
+        //         "                                        <div class=\"col-12\"> " +
+        //         "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+xx+".jpg\" alt=\"sdf\"></div>\n" +
+        //         "<div class='row'> <p class=\"item_ttl\">"+desTitle1+"</p></div>" +
+        //         "<div class='row'> <p class=\"item_price\">"+desPrice1+"</p></div>" +
+        //
+        //         "</div>\n" +
+        //         "\n" +
+        //         "                                </div>\n" +
+        //         "                            </div>";
+        // }
         // document.body.appendChild(div)
         // if (rowCount % 2 == 0) {
         //     div.innerHTML = "                        <div class=\"row\">\n" +
@@ -230,9 +314,9 @@ function createItems() {
 
 
 
-        container.appendChild(div);
-
-        rowCount+=1;
+        container.appendChild(divRow);
+        //
+        // rowCount+=1;
 
 
     }
@@ -255,7 +339,12 @@ function createItems() {
 
 
 
+// ---------------------------------------------------------------------- Prices -----------------------------------------------------------------------
 
+var price_1="100";
+var price_2="200";
+var price_3="300";
+var price_4="400";
 
 
 
@@ -265,7 +354,7 @@ function createItems() {
 
 // ---------------------------------------------------------------------- News 1 -----------------------------------------------------------------------
 
-var NTTL_1="Girls first job.";
+var item="Girls first job.";
 var NCNTNT_1="They chose for a long time and finally made their first order in Israel.";
 // ---------------------------------------------------------------------- News 2 -----------------------------------------------------------------------
 
