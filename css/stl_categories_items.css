@@ -38,3 +38,16 @@
     /*padding: 0.5em;*/
 
 /*}*/
+
+
+.item_ttl{
+    color: blue;
+    margin: 1em;
+    font-size: 1.5em;
+}
+
+.item_price{
+color: red;
+    margin: 0 1em 1em 1em;
+    font-size: 1.5em;
+}
