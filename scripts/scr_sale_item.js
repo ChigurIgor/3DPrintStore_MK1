@@ -20,16 +20,16 @@ function createItem() {
 
 
     if(catId=="0"){
-        dir="categories/xiaomi_mijia_365";
+        dir="categories/0";
     }
     if(catId=="1"){
-        dir="categories/xiaomi_mijia_365";
+        dir="categories/0";
     }
     if(catId=="2"){
-        dir="categories/xiaomi_mijia_365";
+        dir="categories/0";
     }
     if(catId=="3"){
-        dir="categories/xiaomi_mijia_365";
+        dir="categories/0";
     }
 
 
@@ -217,10 +217,10 @@ function addToCart2(){
     //     catId = catId,
     //     count = count; // стоимость товара
     if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
-        cartData[itemId]= parseInt(cartData[itemId])+ count;
+        cartData[itemId][2]= parseInt(cartData[itemId][2])+ count;
         // cartData[itemId][2] += 1;
     } else { // если товара в корзине еще нет, то добавляем в объект
-        cartData[itemId] = [ count];
+        cartData[itemId] = [itemId,count];
     }
     // // if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
     // //     // this.disabled = false; // разблокируем кнопку после обновления LS
@@ -233,7 +233,7 @@ function addToCart2(){
 }
 function clearCart(){
 localStorage.removeItem('cart');
-alert("removed")
+// alert("removed")
 }
 
 

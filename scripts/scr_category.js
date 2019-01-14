@@ -4,7 +4,7 @@ var itemId="";
 var itemsInside=0;
 var itemsInLine=4;
 var dir="";
-        dir="categories/xiaomi_mijia_365";
+        dir="categories/0";
 
 
 function createCategory() {
