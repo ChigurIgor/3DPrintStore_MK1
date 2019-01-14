@@ -191,8 +191,8 @@ function addToCart() {
 
 
 function showCartData() {
-    var cartData = getCartData();
-
+    var cartData = localStorage.getItem('cart');
+    // var cartData=getCartData();
     alert(cartData);
 }
 
@@ -224,14 +224,15 @@ function addToCart2(){
     // // if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
     // //     // this.disabled = false; // разблокируем кнопку после обновления LS
     // // }
-    // var cartData={};
-    //      cartData[itemId] = [ count];
-    var cartData="101";
+    var cartData={};
+         cartData[itemId] = [ count];
+    // var cartData=count;
     setCartData(cartData);
     return false;
 }
 function clearCart(){
 localStorage.removeItem('cart');
+alert("removed")
 }
 
 
