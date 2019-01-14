@@ -6,23 +6,23 @@ function createTopMenu() {
         div.innerHTML = "            <div class=\"row\">\n" +
             "                <div  class=\"col-10 offset-1\" >\n" +
             "                    <div class=\"row\">\n" +
-            "                        <div id=\"tm_item-1\" class=\"col-2\" onclick='openCategory(id)'>\n" +
+            "                        <div id=\"tm_item-0\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "                            <p>Scooter parts</p>\n" +
             "                            <!--<p>Xiaomi Mijia 365 parts</p>-->\n" +
             "                        </div>\n" +
-            "                        <div id=\"tm_item-2\" class=\"col-2\" onclick='openCategory(id)'>\n" +
+            "                        <div id=\"tm_item-1\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "                            <p>Spare parts</p>\n" +
             "                        </div>\n" +
-            "                        <div id=\"tm_item-3\" class=\"col-2\" onclick='openCategory(id)'>\n" +
+            "                        <div id=\"tm_item-2\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "                           <p>Vases</p>\n" +
             "                        </div>\n" +
-            "                        <div id=\"tm_item-4\" class=\"col-2\" onclick='openCategory(id)'>\n" +
+            "                        <div id=\"tm_item-3\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "                           <p>Souvenirs</p>\n" +
             "                        </div>\n" +
-            "                        <div id=\"tm_item-5\" class=\"col-2\" onclick='openCategory(id)'>\n" +
+            "                        <div id=\"tm_item-4\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "                            <p>Print your model</p>\n" +
             "                        </div>\n" +
-            "                        <div id=\"tm_item-6\" class=\"col-2\" onclick='openCategory(id)'>\n" +
+            "                        <div id=\"tm_item-5\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "                           <p>Other</p>\n" +
             "                        </div>\n" +
             "\n" +

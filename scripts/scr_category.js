@@ -19,21 +19,21 @@ function createCategory() {
         // document.write(end + "<br>");
     }
 
-    if(end=="1"){
+    if(end=="0"){
         desTitle=itemTitle_1;
         itemsInside=2;
     }
-    if(end=="2"){
+    if(end=="1"){
         desTitle=itemTitle_2;
         itemsInside=3;
 
     }
-    if(end=="3"){
+    if(end=="2"){
         desTitle=itemTitle_3;
         itemsInside=4;
 
     }
-    if(end=="4"){
+    if(end=="3"){
         desTitle=itemTitle_4;
         itemsInside=5;
 

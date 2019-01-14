@@ -4,7 +4,7 @@ var itemsInLine=1;
 var catId="";
 var itemId="";
 var dir="";
-
+var count=1;
 
 
 function createItem() {
@@ -19,6 +19,9 @@ function createItem() {
 
 
 
+    if(catId=="0"){
+        dir="categories/xiaomi_mijia_365";
+    }
     if(catId=="1"){
         dir="categories/xiaomi_mijia_365";
     }
@@ -26,9 +29,6 @@ function createItem() {
         dir="categories/xiaomi_mijia_365";
     }
     if(catId=="3"){
-        dir="categories/xiaomi_mijia_365";
-    }
-    if(catId=="4"){
         dir="categories/xiaomi_mijia_365";
     }
 
@@ -111,23 +111,23 @@ var j=0;
                 "                </div>\n" +
                 "                <div class=\"col-6\">\n" +
                 "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_ttl\">"+titles[index]+"</p>\n" +
+                "                        <p class=\"item_ttl\" onclick='clearCart()'>"+titles[index]+"</p>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_price\">"+prices[index]+" NIS</p>\n" +
+                "                        <p class=\"item_price\" onclick='showCartData()'>"+prices[index]+" NIS</p>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"row\">\n" +
                 "                        <div class=\"col-5\">\n" +
                 "                            <div class=\"row\">\n" +
-                "                                <div id=\"decr\" class=\"col-4\"><div class=\"row\"><div id=\"decrRow\"><p>-</p></div> </div></div>\n" +
-                "                                <div id=\"count\" class=\"col-4\"><div class=\"row\"><div id=\"countRow\"><input type=\"text\" size=\"40\" value='11'></div> </div></div>\n" +
-                "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\"><p>+</p></div> </div></div>\n" +
+                "                                <div id=\"decr\" class=\"col-4\"><div class=\"row\"><div id=\"decrRow\" onclick='decreaseCount()'><p>-</p></div> </div></div>\n" +
+                "                                <div id=\"count\" class=\"col-4\"><div class=\"row\"><div id=\"countRow\"><input id=\"countInpt\" type=\"text\" size=\"40\" value='1'></div> </div></div>\n" +
+                "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\" onclick='increaseCount()'><p>+</p></div> </div></div>\n" +
 
                 "                            </div>\n" +
                 "                        </div>\n" +
                 "\n" +
                 "                        <div class=\"col-6 offset-1\">\n" +
-                "                            <div class=\"row\"><img class=\"btn_cart\" src=\"images/support/icon_cart_add.png\" alt=\"Add to cart\"></div>\n" +
+                "                            <div class=\"row\"><img class=\"btn_cart\" src=\"images/support/icon_cart_add.png\" alt=\"Add to cart\" onclick='addToCart()'></div>\n" +
                 "                        </div>\n" +
                 "                        <!--<p \">Add to cart</p>-->\n" +
                 "                    </div>\n" +
@@ -166,9 +166,82 @@ var j=0;
 
 
 function increaseCount() {
-
+var count=parseInt(document.getElementById("countInpt").value);
+    document.getElementById("countInpt").value=count+1;
 
 }
+
+function decreaseCount() {
+    var count=parseInt(document.getElementById("countInpt").value);
+    if(count-1>0){
+    document.getElementById("countInpt").value=count-1;
+}
+}
+
+function addToCart() {
+     count=parseInt(document.getElementById("countInpt").value);
+    if(count>0) {
+        // alert("catid= "+catId);
+        // alert("itemId= "+itemId);
+        // alert("count= "+count);
+        addToCart2();
+    }
+
+}
+
+
+function showCartData() {
+    var cartData = getCartData();
+
+    alert(cartData);
+}
+
+// Получаем данные из LocalStorage
+function getCartData(){
+    return JSON.parse(localStorage.getItem('cart'));
+}
+// Записываем данные в LocalStorage
+function setCartData(o){
+    localStorage.setItem('cart', JSON.stringify(o));
+    return false;
+}
+
+
+
+// Добавляем товар в корзину
+function addToCart2(){
+    // this.disabled = true; // блокируем кнопку на время операции с корзиной
+    // var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
+    //     // parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
+    //     itemId = itemId, // ID товара
+    //     catId = catId,
+    //     count = count; // стоимость товара
+    // // if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
+    // //     cartData[itemId][2] += 1;
+    // // } else { // если товара в корзине еще нет, то добавляем в объект
+    // //     cartData[itemId] = [ count];
+    // // }
+    // // if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
+    // //     // this.disabled = false; // разблокируем кнопку после обновления LS
+    // // }
+    // var cartData={};
+    //      cartData[itemId] = [ count];
+    var cartData="101";
+    setCartData(cartData);
+    return false;
+}
+function clearCart(){
+localStorage.removeItem('cart');
+}
+
+
+
+
+
+
+
+
+
 
 
 
