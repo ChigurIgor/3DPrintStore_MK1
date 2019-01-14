@@ -211,21 +211,22 @@ function setCartData(o){
 // Добавляем товар в корзину
 function addToCart2(){
     // this.disabled = true; // блокируем кнопку на время операции с корзиной
-    // var cartData = getCartData() || {}, // получаем данные корзины или создаём новый объект, если данных еще нет
+    var cartData = getCartData() || {}; // получаем данные корзины или создаём новый объект, если данных еще нет
     //     // parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
     //     itemId = itemId, // ID товара
     //     catId = catId,
     //     count = count; // стоимость товара
-    // // if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
-    // //     cartData[itemId][2] += 1;
-    // // } else { // если товара в корзине еще нет, то добавляем в объект
-    // //     cartData[itemId] = [ count];
-    // // }
+    if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
+        cartData[itemId]= parseInt(cartData[itemId])+ count;
+        // cartData[itemId][2] += 1;
+    } else { // если товара в корзине еще нет, то добавляем в объект
+        cartData[itemId] = [ count];
+    }
     // // if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
     // //     // this.disabled = false; // разблокируем кнопку после обновления LS
     // // }
-    var cartData={};
-         cartData[itemId] = [ count];
+    // var cartData={};
+    //      cartData[itemId] = [ count];
     // var cartData=count;
     setCartData(cartData);
     return false;
