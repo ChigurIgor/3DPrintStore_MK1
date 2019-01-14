@@ -119,9 +119,10 @@ var j=0;
                 "                    <div class=\"row\">\n" +
                 "                        <div class=\"col-5\">\n" +
                 "                            <div class=\"row\">\n" +
-                "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\"><p>+</p></div> </div></div>\n" +
-                "                                <div id=\"count\" class=\"col-4\"><div class=\"row\"><div id=\"countRow\"><p>1</p></div> </div></div>\n" +
                 "                                <div id=\"decr\" class=\"col-4\"><div class=\"row\"><div id=\"decrRow\"><p>-</p></div> </div></div>\n" +
+                "                                <div id=\"count\" class=\"col-4\"><div class=\"row\"><div id=\"countRow\"><input type=\"text\" size=\"40\" value='11'></div> </div></div>\n" +
+                "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\"><p>+</p></div> </div></div>\n" +
+
                 "                            </div>\n" +
                 "                        </div>\n" +
                 "\n" +
@@ -164,7 +165,10 @@ var j=0;
 }
 
 
+function increaseCount() {
 
+
+}
 
 
 

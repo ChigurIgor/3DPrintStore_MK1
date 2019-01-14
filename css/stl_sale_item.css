@@ -8,7 +8,7 @@
 [id*="ctlg_item-"]:hover{
     position: relative;
     /*height: 30vh;*/
-    background-color: rgb(135, 252, 245);
+    transform: scale(1.02);
 }
 
 
@@ -77,8 +77,6 @@ color: red;
     font-size: 3em;
     font-weight: bold;
     padding: 0 3vh 0 3vh;
-
-
 }
 #countRow{
     width: 100%;
@@ -88,6 +86,11 @@ color: red;
     border-width: 2px;
     border-radius: 2vh;
     margin: 0;
+}
+
+#countRow input{
+    width: 100%;
+    border-radius: 2vh;
 }
 
 #decr{
