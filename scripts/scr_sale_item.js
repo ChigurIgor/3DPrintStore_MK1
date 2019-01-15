@@ -7,6 +7,72 @@ var dir="";
 var count=1;
 
 
+
+
+
+
+$(document).ready(function(){
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");
+
+
+    itemId= parseInt(queries[1].split("=")[1],10);
+
+
+    getItemData(itemId);
+});
+
+function getItemData(itemId) {
+
+    const url='https://printstore.herokuapp.com/itemgetbyid';
+
+
+    request = $.ajax({
+        url: url,
+        type: "post",
+        data:{ "id" : itemId}
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        // console.log("Hooray, it worked!");
+        // console.log("resp: "+response);
+        // console.log("textStatus: "+textStatus);
+        console.log(response);
+        var duce = jQuery.parseJSON(response);
+        if(duce.length>0){
+            var id = duce[0]._id;
+            var cat = duce[0].cat;
+            var descr = duce[0].descr;
+            var name = duce[0].name;
+            var link = duce[0].link;
+            var price = duce[0].price;
+            // console.log(duce);
+            console.log(id);
+            console.log(cat);
+            console.log(descr);
+            console.log(name);
+            console.log(link);
+            console.log(price);
+
+            createItemsContent(id,cat,descr,name,link,price);
+        }
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+}
+
+
+
 function createItem(id,cat,descr,name,link,price) {
 
     // var queryString = decodeURIComponent(window.location.search);
@@ -20,7 +86,6 @@ function createItem(id,cat,descr,name,link,price) {
     //
     //
     // if(catId=="0"){
-        dir="categories/"+cat;
     // }
     // if(catId=="1"){
     //     dir="categories/0";
@@ -43,6 +108,7 @@ function createItem(id,cat,descr,name,link,price) {
 
 
 function createItemsContent(id,cat,descr,name,link,price) {
+    dir="categories/"+cat;
 
     i=0;
 
@@ -193,7 +259,6 @@ function setCartData(o){
 
 // Добавляем товар в корзину
 function addToCart2(){
-    // this.disabled = true; // блокируем кнопку на время операции с корзиной
     var cartData = getCartData() || {}; // получаем данные корзины или создаём новый объект, если данных еще нет
     //     // parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
     //     itemId = itemId, // ID товара
@@ -237,65 +302,3 @@ localStorage.removeItem('cart');
 
 
 
-
-
-
-$(document).ready(function(){
-    var queryString = decodeURIComponent(window.location.search);
-    queryString = queryString.substring(1);
-    var queries = queryString.split("&");
-
-
-    itemId= parseInt(queries[1].split("=")[1],10);
-
-
-    getItemData(itemId);
-});
-
-function getItemData(itemId) {
-
-    const url='https://printstore.herokuapp.com/itemgetbyid';
-
-
-    request = $.ajax({
-        url: url,
-        type: "post",
-        data:{ "id" : itemId}
-    });
-
-    // Callback handler that will be called on success
-    request.done(function (response, textStatus, jqXHR){
-        // Log a message to the console
-        // console.log("Hooray, it worked!");
-        // console.log("resp: "+response);
-        // console.log("textStatus: "+textStatus);
-        console.log(response);
-        var duce = jQuery.parseJSON(response);
-        if(duce.length>0){
-            var id = duce[0]._id;
-            var cat = duce[0].cat;
-            var descr = duce[0].descr;
-            var name = duce[0].name;
-            var link = duce[0].link;
-            var price = duce[0].price;
-            // console.log(duce);
-            console.log(id);
-            console.log(cat);
-            console.log(descr);
-            console.log(name);
-            console.log(link);
-            console.log(price);
-
-            createItem(id,cat,descr,name,link,price);
-        }
-    });
-
-    // Callback handler that will be called on failure
-    request.fail(function (jqXHR, textStatus, errorThrown){
-        // Log the error to the console
-        console.error(
-            "The following error occurred: "+
-            textStatus, errorThrown
-        );
-    });
-}
