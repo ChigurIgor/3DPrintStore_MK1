@@ -238,33 +238,8 @@ localStorage.removeItem('cart');
 
 
 
-// ---------------------------------------------------------------------- Prices -----------------------------------------------------------------------
-
-var price_1="100";
-var price_2="200";
-var price_3="300";
-var price_4="400";
-var price_5="500";
 
 
-
-
-
-// ---------------------------------------------------------------------- itemTitles -----------------------------------------------------------------------
-
-
-var itemTitle_1="Spacers";
-
-var itemTitle_2="Spacers flex";
-
-var itemTitle_3="Rear wire protection";
-
-
-var itemTitle_4="Caps";
-var itemTitle_5="Hook";
-
-
-// $document.ready(alert("start"));
 $(document).ready(function(){
     var queryString = decodeURIComponent(window.location.search);
     queryString = queryString.substring(1);
@@ -297,22 +272,22 @@ function getItemData(itemId) {
         console.log(response);
         var duce = jQuery.parseJSON(response);
         if(duce.length>0){
-        var id = duce[0]._id;
-        var cat = duce[0].cat;
-        var descr = duce[0].descr;
-        var name = duce[0].name;
-        var link = duce[0].link;
-        var price = duce[0].price;
-        // console.log(duce);
-        console.log(id);
-        console.log(cat);
-        console.log(descr);
-        console.log(name);
-        console.log(link);
-        console.log(price);
+            var id = duce[0]._id;
+            var cat = duce[0].cat;
+            var descr = duce[0].descr;
+            var name = duce[0].name;
+            var link = duce[0].link;
+            var price = duce[0].price;
+            // console.log(duce);
+            console.log(id);
+            console.log(cat);
+            console.log(descr);
+            console.log(name);
+            console.log(link);
+            console.log(price);
 
-        createItem(id,cat,descr,name,link,price);
-    }
+            createItem(id,cat,descr,name,link,price);
+        }
     });
 
     // Callback handler that will be called on failure

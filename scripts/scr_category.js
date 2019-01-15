@@ -1,77 +1,54 @@
 var desTitle="";
 var catId="";
 var itemId="";
-var itemsInside=0;
+var itemsInside=5;
 var itemsInLine=4;
 var dir="";
-        dir="categories/0";
 
 
 function createCategory() {
 
-    var queryString = decodeURIComponent(window.location.search);
-    queryString = queryString.substring(1);
-    var queries = queryString.split("&");
-    for (var i = 0; i < queries.length; i++)
-    {
-        var end = parseInt(queries[i].split("=")[1],10);
-        catId=end;
-        // document.write(end + "<br>");
-    }
 
-    if(end=="0"){
-        desTitle=itemTitle_1;
-        itemsInside=2;
-    }
-    if(end=="1"){
-        desTitle=itemTitle_2;
-        itemsInside=3;
 
-    }
-    if(end=="2"){
-        desTitle=itemTitle_3;
-        itemsInside=4;
-
-    }
-    if(end=="3"){
-        desTitle=itemTitle_4;
-        itemsInside=5;
-
-    }
+    // if(end=="0"){
+    //     desTitle=itemTitle_1;
+    //     itemsInside=2;
+    // }
+    // if(end=="1"){
+    //     desTitle=itemTitle_2;
+    //     itemsInside=3;
+    //
+    // }
+    // if(end=="2"){
+    //     desTitle=itemTitle_3;
+    //     itemsInside=4;
+    //
+    // }
+    // if(end=="3"){
+    //     desTitle=itemTitle_4;
+    //     itemsInside=5;
+    //
+    // }
 
 
 
 
 
-    createItems();
+    // createItems();
 
 }
 
 
 
-function createItems() {
+function createItems(duce) {
 
 
-    var titles = [];
-    titles.push(itemTitle_1);
-    titles.push(itemTitle_2);
-    titles.push(itemTitle_3);
-    titles.push(itemTitle_4);
-    titles.push(itemTitle_5);
+    if(duce.length>0){
 
-    var prices=[];
-    prices.push(price_1);
-    prices.push(price_2);
-    prices.push(price_3);
-    prices.push(price_4);
-    prices.push(price_5);
+        // createItem(id,cat,descr,name,link,price);
+    }
 
 
-
-    // var xx=0;
-    // var yy=0;
-    // var rowCount=1;
-    i=0;
 
     var clsType="col-6";
     switch (itemsInLine) {
@@ -98,30 +75,46 @@ function createItems() {
 
 
 
-    for(i=0; i<itemsInside;i += itemsInLine) {
+    for(i=0; i<duce.length;i += itemsInLine) {
         // alert("i= "+i);
 
 
         var divRow = document.createElement('div');
         divRow.className="row";
 
+
+        // console.log(duce);
+        // console.log(id);
+        // console.log(cat);
+        // console.log(descr);
+        // console.log(name);
+        // console.log(link);
+        // console.log(price);
+
 var j=0;
         var index=0;
         for(j=0;j<itemsInLine; j+=1){
             // alert("j= "+j);
-            index=i+j;
+            index=i+j;   if(index<itemsInside){
+
+            var id = duce[index].id;
+            var cat = duce[index].cat;
+            var descr = duce[index].descr;
+            var name = duce[index].name;
+            var link = duce[index].link;
+            var price = duce[index].price;
             // alert("index= "+index);
             var div = document.createElement('div');
             div.className=clsType;
-            div.id="item-"+index;
+            div.id="item-"+id;
 
-            if(index<itemsInside){
+
             div.innerHTML =
-                "                                    <div class=\"row\" id=\"ctlg_item-"+index+"\"  onclick=\"openItem(id)\">\n" +
+                "                                    <div class=\"row\" id=\"ctlg_item-"+id+"\"  onclick=\"openItem(id)\">\n" +
                 "                                        <div class=\"col-12\"> " +
-                "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt=\"sdf\"></div>\n" +
-                "<div class='row'> <p class=\"item_ttl\">"+titles[index]+"</p></div>" +
-                "<div class='row'> <p class=\"item_price\">"+prices[index]+"</p></div>" +
+                "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+link+".jpg\" alt=\"sdf\"></div>\n" +
+                "<div class='row'> <p class=\"item_ttl\">"+name+"</p></div>" +
+                "<div class='row'> <p class=\"item_price\">"+price+"</p></div>" +
   "                            </div>";
 
 
@@ -164,21 +157,68 @@ function openItem(id) {
 
 
 
+$(document).ready(function(){
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");
+    for (var i = 0; i < queries.length; i++)
+    {
+        var end = parseInt(queries[i].split("=")[1],10);
+        catId=end;
+        // document.write(end + "<br>");
+        dir="categories/"+catId;
 
-// ---------------------------------------------------------------------- Prices -----------------------------------------------------------------------
-
-var price_1="100";
-var price_2="200";
-var price_3="300";
-var price_4="400";
-var price_5="500";
+    }
 
 
-// ---------------------------------------------------------------------- itemTitles -----------------------------------------------------------------------
+    getItemData(catId);
+});
+
+function getItemData(catId) {
+
+    const url='https://printstore.herokuapp.com/itemgetbycat';
 
 
-var itemTitle_1="Spacers";
-var itemTitle_2="Spacers flex";
-var itemTitle_3="Rear wire protection";
-var itemTitle_4="Caps";
-var itemTitle_5="Hook";
+    request = $.ajax({
+        url: url,
+        type: "post",
+        data:{ "cat" : catId}
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        // console.log("Hooray, it worked!");
+        // console.log("resp: "+response);
+        // console.log("textStatus: "+textStatus);
+        console.log(response);
+        var duce = jQuery.parseJSON(response);
+        if(duce.length>0){
+            var id = duce[0]._id;
+            var cat = duce[0].cat;
+            var descr = duce[0].descr;
+            var name = duce[0].name;
+            var link = duce[0].link;
+            var price = duce[0].price;
+            // console.log(duce);
+            console.log(id);
+            console.log(cat);
+            console.log(descr);
+            console.log(name);
+            console.log(link);
+            console.log(price);
+            createItems(duce);
+
+            // createItem(id,cat,descr,name,link,price);
+        }
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+}
