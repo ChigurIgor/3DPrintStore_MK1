@@ -6,7 +6,12 @@ var itemId="";
 var dir="";
 var count=1;
 
-
+var id="" ;
+var cat="" ;
+var descr="" ;
+var name="" ;
+var link="" ;
+var price="" ;
 
 
 
@@ -44,12 +49,12 @@ function getItemData(itemId) {
         console.log(response);
         var duce = jQuery.parseJSON(response);
         if(duce.length>0){
-            var id = duce[0]._id;
-            var cat = duce[0].cat;
-            var descr = duce[0].descr;
-            var name = duce[0].name;
-            var link = duce[0].link;
-            var price = duce[0].price;
+             id = duce[0]._id;
+             cat = duce[0].cat;
+             descr = duce[0].descr;
+             name = duce[0].name;
+             link = duce[0].link;
+             price = duce[0].price;
             // console.log(duce);
             console.log(id);
             console.log(cat);
@@ -269,7 +274,7 @@ function addToCart2(){
         cartData[itemId][1]= parseInt(cartData[itemId][1])+ count;
         // cartData[itemId][2] += 1;
     } else { // если товара в корзине еще нет, то добавляем в объект
-        cartData[itemId] = [itemId,count];
+        cartData[itemId] = [itemId,count,id,cat,descr,name,link,price ];
     }
     // // if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
     // //     // this.disabled = false; // разблокируем кнопку после обновления LS
