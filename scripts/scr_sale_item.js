@@ -7,63 +7,43 @@ var dir="";
 var count=1;
 
 
-function createItem() {
+function createItem(id,cat,descr,name,link,price) {
 
-    var queryString = decodeURIComponent(window.location.search);
-    queryString = queryString.substring(1);
-    var queries = queryString.split("&");
-
-
-    catId= parseInt(queries[0].split("=")[1],10);
-    itemId= parseInt(queries[1].split("=")[1],10);
-
-
-
-    if(catId=="0"){
-        dir="categories/0";
-    }
-    if(catId=="1"){
-        dir="categories/0";
-    }
-    if(catId=="2"){
-        dir="categories/0";
-    }
-    if(catId=="3"){
-        dir="categories/0";
-    }
-
-
+    // var queryString = decodeURIComponent(window.location.search);
+    // queryString = queryString.substring(1);
+    // var queries = queryString.split("&");
+    //
+    //
+    // catId= parseInt(queries[0].split("=")[1],10);
+    // itemId= parseInt(queries[1].split("=")[1],10);
+    //
+    //
+    //
+    // if(catId=="0"){
+        dir="categories/"+cat;
+    // }
+    // if(catId=="1"){
+    //     dir="categories/0";
+    // }
+    // if(catId=="2"){
+    //     dir="categories/0";
+    // }
+    // if(catId=="3"){
+    //     dir="categories/0";
+    // }
 
 
 
-    createItemsContent();
+
+
+    createItemsContent(id,cat,descr,name,link,price);
 
 }
 
 
 
-function createItemsContent() {
+function createItemsContent(id,cat,descr,name,link,price) {
 
-
-    var titles = [];
-    titles.push(itemTitle_1);
-    titles.push(itemTitle_2);
-    titles.push(itemTitle_3);
-    titles.push(itemTitle_4);
-    titles.push(itemTitle_5);
-
-    var prices=[];
-    prices.push(price_1);
-    prices.push(price_2);
-    prices.push(price_3);
-    prices.push(price_4);
-    prices.push(price_5);
-
-
-
-    // var xx=0;
-    // var yy=0;
-    // var rowCount=1;
     i=0;
 
     var clsType="col-6";
@@ -98,7 +78,7 @@ function createItemsContent() {
         divRow.className="row";
 
 var j=0;
-        var index=itemId;
+        var index=link;
 
 
 
@@ -111,10 +91,13 @@ var j=0;
                 "                </div>\n" +
                 "                <div class=\"col-6\">\n" +
                 "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_ttl\" onclick='clearCart()'>"+titles[index]+"</p>\n" +
+                "                        <p class=\"item_ttl\" onclick='clearCart()'>"+name+"</p>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_price\" onclick='showCartData()'>"+prices[index]+" NIS</p>\n" +
+                "                        <p class=\"item_price\" onclick='showCartData()'>"+price+" NIS</p>\n" +
+                "                    </div>\n" +
+                "<div class=\"row\">\n" +
+                "                        <p class=\"item_dscr\" onclick='showCartData()'>"+descr+"</p>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"row\">\n" +
                 "                        <div class=\"col-5\">\n" +
@@ -283,38 +266,26 @@ var itemTitle_5="Hook";
 
 // $document.ready(alert("start"));
 $(document).ready(function(){
-    getItemData();
+    var queryString = decodeURIComponent(window.location.search);
+    queryString = queryString.substring(1);
+    var queries = queryString.split("&");
+
+
+    itemId= parseInt(queries[1].split("=")[1],10);
+
+
+    getItemData(itemId);
 });
 
-function getItemData() {
-    // alert("start getItemData");
+function getItemData(itemId) {
 
-    // const Http = new XMLHttpRequest();
     const url='https://printstore.herokuapp.com/itemgetbyid';
-    // Http.open("POST", url,true);
-    // Http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    // // Http.send("id=Henry&lname=Ford");
-    // Http.send();
-    // xmlDoc = Http.responseXML;
-    //
-    // Http.onreadystatechange = function() {
-    //     alert(this.status);
-    //     if (this.readyState == 4 && this.status == 200) {
-    //         alert(this.getAllResponseHeaders());
-    //     }
-    // };
-    // $.post(url,
-        // {
-        //     id: "0"
-        // },
-        // function(data, status){
-        //     alert("Data: " + data + "\nStatus: " + status);
-        // });
+
 
     request = $.ajax({
         url: url,
         type: "post",
-        data:{ "id" : 0}
+        data:{ "id" : itemId}
     });
 
     // Callback handler that will be called on success
@@ -325,6 +296,7 @@ function getItemData() {
         // console.log("textStatus: "+textStatus);
         console.log(response);
         var duce = jQuery.parseJSON(response);
+        if(duce.length>0){
         var id = duce[0]._id;
         var cat = duce[0].cat;
         var descr = duce[0].descr;
@@ -339,6 +311,8 @@ function getItemData() {
         console.log(link);
         console.log(price);
 
+        createItem(id,cat,descr,name,link,price);
+    }
     });
 
     // Callback handler that will be called on failure

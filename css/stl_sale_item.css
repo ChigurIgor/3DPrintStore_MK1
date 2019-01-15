@@ -33,6 +33,14 @@ color: red;
     font-size: 1.5em;
 }
 
+.item_dscr{
+    color: blue;
+    margin: 1em;
+    font-size: 1.2em;
+}
+
+
+
 
 .btn_cart {
     height: 10vh;
