@@ -1,13 +1,5 @@
 $(document).ready(function(){
-    var queryString = decodeURIComponent(window.location.search);
-    queryString = queryString.substring(1);
-    var queries = queryString.split("&");
-
-
-    itemId= parseInt(queries[1].split("=")[1],10);
-
-
-    getItemData(itemId);
+    showCartData();
 });
 
 
@@ -49,7 +41,7 @@ function addToCart2(){
     //     catId = catId,
     //     count = count; // стоимость товара
     if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
-        cartData[itemId][2]= parseInt(cartData[itemId][2])+ count;
+        cartData[itemId][1]= parseInt(cartData[itemId][1])+ count;
         // cartData[itemId][2] += 1;
     } else { // если товара в корзине еще нет, то добавляем в объект
         cartData[itemId] = [itemId,count];

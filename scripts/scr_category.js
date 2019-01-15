@@ -97,7 +97,7 @@ var j=0;
             // alert("j= "+j);
             index=i+j;   if(index<itemsInside){
 
-            var id = duce[index].id;
+            var id = duce[index]._id;
             var cat = duce[index].cat;
             var descr = duce[index].descr;
             var name = duce[index].name;
@@ -143,7 +143,8 @@ var j=0;
 
 function openItem(id) {
 
-    var itemId = parseInt(id.split("-")[1],10);
+    // var itemId = parseInt(id.split("-")[1],10);
+    var itemId = id.split("-")[1];
     var queryString = "?cat=" + catId+"&item="+itemId;
     window.location.href = "item.html" + queryString;
 

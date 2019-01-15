@@ -17,7 +17,8 @@ $(document).ready(function(){
     var queries = queryString.split("&");
 
 
-    itemId= parseInt(queries[1].split("=")[1],10);
+    // itemId= parseInt(queries[1].split("=")[1],10);
+    itemId= queries[1].split("=")[1];
 
 
     getItemData(itemId);
@@ -31,7 +32,7 @@ function getItemData(itemId) {
     request = $.ajax({
         url: url,
         type: "post",
-        data:{ "id" : itemId}
+        data:{ "_id" : itemId}
     });
 
     // Callback handler that will be called on success
@@ -265,7 +266,7 @@ function addToCart2(){
     //     catId = catId,
     //     count = count; // стоимость товара
     if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
-        cartData[itemId][2]= parseInt(cartData[itemId][2])+ count;
+        cartData[itemId][1]= parseInt(cartData[itemId][1])+ count;
         // cartData[itemId][2] += 1;
     } else { // если товара в корзине еще нет, то добавляем в объект
         cartData[itemId] = [itemId,count];
