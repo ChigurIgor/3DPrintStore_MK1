@@ -1,6 +1,34 @@
+var items="";
+var arrKeys=[];
+
+
 $(document).ready(function(){
-    // showCartData();
+
+    start();
+
+
 });
+
+function start() {
+    var arr=getCartData();
+    arrKeys=getKeys(arr);
+    items=arrKeys.length;
+    console.log(items);
+}
+
+
+function getKeys(arr) {
+
+    // var s = {name: "raul", age: "22", gender: "Male"}
+    // var s = {"5c3dc69421b7570017a0339d": ["5c3dc69421b7570017a0339d", 1], "5c3e169c3f6cee001780d8e8":  ["5c3dc69421b7570017a0339d", 1]};
+    // console.log(s);
+
+    var keys = [];
+    for(var k in arr) keys.push(k);
+    console.log(keys);
+    return keys;
+}
+
 
 
 function addToCart() {
@@ -31,8 +59,6 @@ function setCartData(o){
     return false;
 }
 
-
-
 // Добавляем товар в корзину
 function addToCart2(){
     var cartData = getCartData() || {}; // получаем данные корзины или создаём новый объект, если данных еще нет
@@ -59,5 +85,9 @@ function clearCart(){
     localStorage.removeItem('cart');
 // alert("removed")
 }
+
+
+
+
 
 
