@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    showCartData();
+    // showCartData();
 });
 
 
@@ -59,3 +59,5 @@ function clearCart(){
     localStorage.removeItem('cart');
 // alert("removed")
 }
+
+

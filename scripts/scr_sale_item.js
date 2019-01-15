@@ -20,7 +20,7 @@ $(document).ready(function(){
     // itemId= parseInt(queries[1].split("=")[1],10);
     itemId= queries[1].split("=")[1];
 
-
+    // console.log(itemId);
     getItemData(itemId);
 });
 
@@ -32,7 +32,7 @@ function getItemData(itemId) {
     request = $.ajax({
         url: url,
         type: "post",
-        data:{ "_id" : itemId}
+        data:{ "id" : itemId}
     });
 
     // Callback handler that will be called on success
