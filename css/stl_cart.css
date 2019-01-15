@@ -7,13 +7,19 @@ font-size: 2em;
 [id*="cart_item-"]{
     position: relative;
     /*height: 30vh;*/
-    padding: 5%;
+    padding: 2%;
+
+    /*height: 25vh;*/
 }
 
 [id*="item_img_cont-"] img{
     width: 30vh;
     height: 20vh;
     cursor: pointer;
+
+}
+[id*="item_img_cont-"] img:hover{
+    transform: scale(1.2);
 
 }
 
@@ -40,26 +46,32 @@ color: blue;
 .del{
  color: red;
     font-size: 1.5em;
+    cursor: pointer;
 }
 
-
+.del:hover{
+   transform: scale(1.2);
+}
 
 
 [id*="add-"]{
     color: green;
     font-size: 2em;
     font-weight: bold;
-    padding: 0 3vh 0 3vh;
+    /*padding: 0 3vh 0 3vh;*/
     cursor: pointer;
 }
 [id*="addRow-"]{
-    width: 100%;
+    /*width: 100%;*/
     text-align: center;
     border-color: gray;
     border-style: solid;
     border-width: 2px;
     border-radius: 2vh;
-    margin: 0;
+    /*margin: 0;*/
+}
+[id*="addRow-"] p{
+    width: 100%;
 }
 [id*="addRow-"]:hover{
     background-color: #9cff94;
@@ -76,13 +88,13 @@ color: blue;
     padding: 0 3vh 0 3vh;
 }
 [id*="countRow-"]{
-    width: 100%;
+    /*width: 100%;*/
     text-align: center;
     border-color: gray;
     border-style: solid;
     border-width: 2px;
     border-radius: 2vh;
-    margin: 0;
+    /*margin: 0;*/
 }
 
 [id*="countRow-"] input{
@@ -96,21 +108,27 @@ color: blue;
     color: red;
     font-size: 2em;
     font-weight: bold;
-    padding: 0 3vh 0 3vh;
+    /*padding: 0 3vh 0 3vh;*/
     cursor: pointer;
-
-
 }
+
+
 [id*="decrRow-"]{
     border-color: gray;
     border-style: solid;
     border-width: 2px;
-    margin: 0;
-    width: 100%;
-    text-align: center;
     border-radius: 2vh;
+    /*margin: 0;*/
+    /*width: 100%;*/
+    text-align: center;
+
 
 }
+
+[id*="decrRow-"] p{
+    width: 100%;
+}
+
 [id*="decrRow-"]:hover{
     background-color: #ffa7a3;
 }
