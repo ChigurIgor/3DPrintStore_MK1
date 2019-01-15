@@ -154,13 +154,16 @@ function inputCangedCount(id) {
 
     if(count-1<=0){
         var newCount=1;
+        var newPrice=newCount*price;
         input.value=newCount;
+        document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+
     }
-    var rep = /[-.;":'a-zA-Zа-яА-Я]/;
-    if (rep.test(value)) {
-        value = value.replace(rep, '');
-        input.value = value;
-    }
+    // var rep = /[-.;":'a-zA-Zа-яА-Я]/;
+    // if (rep.test(value)) {
+    //     value = value.replace(rep, '');
+    //     input.value = value;
+    // }
 
 
 }
