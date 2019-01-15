@@ -279,3 +279,74 @@ var itemTitle_3="Rear wire protection";
 
 var itemTitle_4="Caps";
 var itemTitle_5="Hook";
+
+
+// $document.ready(alert("start"));
+$(document).ready(function(){
+    getItemData();
+});
+
+function getItemData() {
+    // alert("start getItemData");
+
+    // const Http = new XMLHttpRequest();
+    const url='https://printstore.herokuapp.com/itemgetbyid';
+    // Http.open("POST", url,true);
+    // Http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    // // Http.send("id=Henry&lname=Ford");
+    // Http.send();
+    // xmlDoc = Http.responseXML;
+    //
+    // Http.onreadystatechange = function() {
+    //     alert(this.status);
+    //     if (this.readyState == 4 && this.status == 200) {
+    //         alert(this.getAllResponseHeaders());
+    //     }
+    // };
+    // $.post(url,
+        // {
+        //     id: "0"
+        // },
+        // function(data, status){
+        //     alert("Data: " + data + "\nStatus: " + status);
+        // });
+
+    request = $.ajax({
+        url: url,
+        type: "post",
+        data:{ "id" : 0}
+    });
+
+    // Callback handler that will be called on success
+    request.done(function (response, textStatus, jqXHR){
+        // Log a message to the console
+        // console.log("Hooray, it worked!");
+        // console.log("resp: "+response);
+        // console.log("textStatus: "+textStatus);
+        console.log(response);
+        var duce = jQuery.parseJSON(response);
+        var id = duce[0]._id;
+        var cat = duce[0].cat;
+        var descr = duce[0].descr;
+        var name = duce[0].name;
+        var link = duce[0].link;
+        var price = duce[0].price;
+        // console.log(duce);
+        console.log(id);
+        console.log(cat);
+        console.log(descr);
+        console.log(name);
+        console.log(link);
+        console.log(price);
+
+    });
+
+    // Callback handler that will be called on failure
+    request.fail(function (jqXHR, textStatus, errorThrown){
+        // Log the error to the console
+        console.error(
+            "The following error occurred: "+
+            textStatus, errorThrown
+        );
+    });
+}
