@@ -37,7 +37,6 @@ function getKeys(arr) {
 
 
 function createItemsContent() {
-    dir="categories/"+cat;
 
     i=0;
 
@@ -64,8 +63,16 @@ function createItemsContent() {
         // console.log(item);
         // console.log(item[0]);
         // console.log(item[1]);
-         id=item[0];
+        id=item[0];
          count=item[1];
+         count=item[1];
+         cat=item[3];
+         descr=item[4];
+         name=item[5];
+         link=item[6];
+         price=item[7];
+        dir="categories/"+cat;
+        let priceFull=parseInt(price)*parseInt(count);
 
         var divRowItem = document.createElement('div');
         divRowItem.className="row";
@@ -74,23 +81,23 @@ function createItemsContent() {
         divRowItem.innerHTML ="<p>"+itemsCount+" items in cart</p>";
 
     divRowItem.innerHTML=" " +
-        " <div class=\"col-3\"><div id=\"item_img_cont-\"+id class=\"row\"><img src=\"images/categories/0/0.jpg\"></div> </div>\n" +
+        " <div class=\"col-3\"><div id=\"item_img_cont-"+id+"\" class=\"row\"><img src=\"images/"+dir+"/"+link+".jpg\"></div> </div>\n" +
         "            <div class=\"col-5\">\n" +
-        "                <div id=\"item_name_cont-\"+id class=\"row\"><p>Some name</p></div>\n" +
-        "                <div id=\"item_desc_cont-\"+id class=\"row\"><p>Some description</p></div>\n" +
+        "                <div id=\"item_name_cont-"+id+"\" class=\"row\"><p>"+name+"</p></div>\n" +
+        "                <div id=\"item_desc_cont-"+id+"\" class=\"row\"><p>"+descr+"</p></div>\n" +
         "            </div>\n" +
         "            <div class=\"col-4\">\n" +
-        "                <div id=\"item_count_cont-\"+id class=\"row\">\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><p class=\"price\">700</p></div> </div>\n" +
+        "                <div id=\"item_count_cont-"+id+"\" class=\"row\">\n" +
+        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price-"+id+"\">"+price+" NIS</p></div> </div>\n" +
         "                    <div class=\"col-6\">\n" +
         "                        <div class=\"row\">\n" +
-        "                            <div  id=\"decr-\"+id class=\"col-3 offset-1\"><div id=\"decrRow-\"+id class=\"row\"><p >-</p></div> </div>\n" +
-        "                            <div id=\"count-\"+id class=\"col-4\"><div id=\"countRow-\"+id class=\"row\"><input id=\"countInpt-\"+id value=\""+count+"\" ></div> </div>\n" +
-        "                            <div id=\"add-\"+id class=\"col-3\"><div id=\"addRow-\"+idclass=\"row\"><p  >+</p></div> </div>\n" +
+        "                            <div  id=\"decr-"+id+"\" class=\"col-3 offset-1\"><div id=\"decrRow-"+id+"\" class=\"row\" onclick='decreaseCount(id)'><p >-</p></div> </div>\n" +
+        "                            <div id=\"count-"+id+"\" class=\"col-4\"><div id=\"countRow-"+id+"\" class=\"row\"><input id=\"countInpt-"+id+"\" value=\""+count+"\"  onchange='inputCangedCount(id)' ></div> </div>\n" +
+        "                            <div id=\"add-"+id+"\" class=\"col-3\"><div id=\"addRow-"+id+"\" class=\"row\" onclick='increaseCount(id)'><p  >+</p></div> </div>\n" +
         "                        </div>\n" +
         "                    </div>\n" +
         "\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><p class=\"price_full\">1400</p></div> </div>\n" +
+        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price_full-"+id+"\">"+priceFull+" NIS</p></div> </div>\n" +
         "                    <div class=\"col-2\"><div class=\"row\"><p class=\"del\">Delete</p></div> </div>\n" +
         "                </div>\n" +
         "            </div>"
@@ -108,9 +115,55 @@ function createItemsContent() {
 
 
 
+function increaseCount(id) {
+    var     itemId= id.split("-")[1];
+     var count=parseInt(document.getElementById("countInpt-"+itemId).value);
+     var price=parseInt(document.getElementById("price-"+itemId).innerText.split(" ")[0]);
+     // var price=document.getElementById("price-"+itemId).innerText;
+     var newCount=count+1;
+     var newPrice=newCount*price;
+    document.getElementById("countInpt-"+itemId).value=newCount;
+    document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
 
 
+}
 
+function decreaseCount(id) {
+    var     itemId= id.split("-")[1];
+
+    var count=parseInt(document.getElementById("countInpt-"+itemId).value);
+    var price=parseInt(document.getElementById("price-"+itemId).innerText.split(" ")[0]);
+    var newCount=count-1;
+    var newPrice=newCount*price;
+    if(count-1>0){
+        document.getElementById("countInpt-"+itemId).value=newCount;
+        document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+    }
+}
+
+
+function inputCangedCount(id) {
+    var     itemId= id.split("-")[1];
+    var input=document.getElementById("countInpt-"+itemId);
+    var count=parseInt(document.getElementById("countInpt-"+itemId).value);
+    var price=parseInt(document.getElementById("price-"+itemId).innerText.split(" ")[0]);
+    var newPrice=count*price;
+    if(count-1>0){
+        document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+    }
+
+    if(count-1<=0){
+        var newCount=1;
+        input.value=newCount;
+    }
+    var rep = /[-.;":'a-zA-Zа-яА-Я]/;
+    if (rep.test(value)) {
+        value = value.replace(rep, '');
+        input.value = value;
+    }
+
+
+}
 
 
 
