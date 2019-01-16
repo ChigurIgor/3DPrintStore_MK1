@@ -9,6 +9,7 @@ var name="" ;
 var link="" ;
 var price="" ;
 var divRowTitle;
+var divRowOrder;
 
 
 $(document).ready(function(){
@@ -107,6 +108,8 @@ function createItemsContent() {
         container.appendChild(divRowItem);
 
     }
+
+    createOrderForm();
 
 
 }
@@ -289,6 +292,33 @@ function deleteItemCart(id){
     //      cartData[itemId] = [ count];
     // var cartData=count;
     setCartData(cartData);
+}
+
+function     createOrderForm(){
+    divRowOrder = document.createElement('div');
+    divRowOrder.className="row";
+    divRowOrder.id="orderForm";
+
+    divRowOrder.innerHTML="<div id=\"right_col\" class=\"col-5\">\n" +
+        "    <div id=\"ms-3\" class=\"row\"> <input type=\"text\" id=\"phoneMsg\"name=\"Telephone\" placeholder=\"Telephone\"></div>\n" +
+        "    <div id=\"ms-1\" class=\"row\"> <input type=\"text\" id=\"nameMsg\" name=\"FirstName\" placeholder=\"Name\"></div>\n" +
+        "    <div id=\"ms-2\" class=\"row\"> <input type=\"text\" id=\"emailMsg\" name=\"Email\" placeholder=\"Email\"></div>\n" +
+        "    <div id=\"ms-5\" class=\"row\"> <input type=\"text\" id=\"emailAdrs\" name=\"Address\" placeholder=\"Address\"></div>\n" +
+        "    <div id=\"ms-4\" class=\"row\"> <textarea          id=\"txtMsg\"name=\"Message\" placeholder=\"Comment to the order\"></textarea></div>\n" +
+        "<div id=\"btn_send\" class=\"row\" onclick=\"sendmsg()\">\n" +
+        "    <div class=\"col-12\">\n" +
+        "    <p>Send</p>\n" +
+        "    <!--<form id=\"contact_form\" method=\"post\" action=\"../PHP/send_email.php\">-->\n" +
+        "\n" +
+        "    <!--<input type=\"submit\" class=\"form_control submit\" value=\"Send message\">-->\n" +
+        "    <!--</form>-->\n" +
+        "\n" +
+        "    </div>\n" +
+        "    </div>\n" +
+        "\n" +
+        "    </div>\n";
+    container.appendChild(divRowOrder);
+
 }
 
 
