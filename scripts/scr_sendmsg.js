@@ -8,6 +8,46 @@ function sendmsg() {
     // var year=Date.now().getFullYear();
     // var month=Date.now().getMonth();
     // var date=Date.now().getDate();
+    // Use of Date.now() function
+    // var d = Date(Date.now());
+    //
+    // // Converting the number of millisecond in date string
+    // a = d.toString();
+    // console.log(a);
+
+
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1; //January is 0!
+
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    var todayDate = dd + '/' + mm + '/' + yyyy;
+    console.log(todayDate);
+
+    var hh = today.getHours();
+    var mins = today.getMinutes(); //January is 0!
+    var secs = today.getSeconds(); //January is 0!
+    if (hh < 10) {
+        hh = '0' + hh;
+    }
+    if (mins < 10) {
+        mins = '0' + mins;
+    }
+    if (secs < 10) {
+        secs = '0' + secs;
+    }
+
+    var todayTime = hh + '/' + mins + '/' + secs;
+    console.log(todayTime);
+
+
+
 
     var cartData=getCartData();
     arrKeys=getKeys(cartData);
@@ -20,9 +60,7 @@ function sendmsg() {
         var item = cartData[arrKeys[i]];
         var obj = new Object();
 
-        // console.log(item);
-        // console.log(item[0]);
-        // console.log(item[1]);
+
         id = item[0];
         count = item[1];
         cat = item[3];
@@ -39,9 +77,11 @@ function sendmsg() {
         arr.push(jsonString);
     }
 console.log(arr);
+
+
     var http = new XMLHttpRequest();
     var url = 'https://printstore.herokuapp.com/orderadd';
-    var params = 'email='+email+'&name='+name+'&phone='+phone+'&msgtxt='+txt+'&address='+address+'&cart='+arr+'&date='+Date.now()+'&time='+Date.now();
+    var params = 'email='+email+'&name='+name+'&phone='+phone+'&msgtxt='+txt+'&address='+address+'&cart='+arr+'&date='+todayDate+'&time='+todayTime;
     http.open('POST', url, true);
 
 //Send the proper header information along with the request
@@ -49,7 +89,8 @@ console.log(arr);
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
-            alert(http.responseText);
+            alert("Your order has been sent");
+            clearCart();
         }
     };
     http.send(params);
@@ -65,4 +106,9 @@ console.log(arr);
 
 function getCartData(){
     return JSON.parse(localStorage.getItem('cart'));
+}
+
+function clearCart(){
+    localStorage.removeItem('cart');
+// alert("removed")
 }
