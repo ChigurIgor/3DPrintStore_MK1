@@ -1,4 +1,4 @@
-function sendmsg() {
+function sendMsg() {
     var name = document.getElementById("nameMsg").value;
     var email = document.getElementById("emailMsg").value;
     var phone = document.getElementById("phoneMsg").value;
@@ -79,13 +79,22 @@ function sendmsg() {
         price = item[7];
         obj.id = id;
         obj.count = count;
-        obj.nameItem = nameItem;
+        obj.price = price;
 
         var jsonString= JSON.stringify(obj);
+        // console.log(jsonString);
+        // console.log(obj);
+        // console.log(obj);
 
         arr.push(jsonString);
+
     }
-console.log(arr);
+    var obj=JSON.stringify(arr);
+console.log(JSON.stringify(arr));
+        // var arrObj = JSON.parse(obj);
+        // console.log(arrObj);
+        // console.log(JSON.parse(arrObj[0]).id);
+
 
         divRowProgress = document.createElement('div');
         divRowProgress.className="row";
@@ -95,7 +104,7 @@ console.log(arr);
 
     var http = new XMLHttpRequest();
     var url = 'https://printstore.herokuapp.com/orderadd';
-    var params = 'email='+email+'&name='+name+'&phone='+phone+'&msgtxt='+txt+'&address='+address+'&cart='+arr+'&date='+todayDate+'&time='+todayTime;
+    var params = 'email='+email+'&name='+name+'&phone='+phone+'&msgtxt='+txt+'&address='+address+'&cart='+obj+'&date='+todayDate+'&time='+todayTime;
     http.open('POST', url, true);
 
 //Send the proper header information along with the request
@@ -123,8 +132,19 @@ function getCartData(){
 }
 
 function clearCart(){
-    localStorage.removeItem('cart');
+
+    var cartData=getCartData();
+    arrKeys=getKeys(cartData);
+    itemsCount=arrKeys.length;
+    if(itemsCount>0) {
+        var arr = [];
+    }
+
+        localStorage.removeItem('cart');
 // alert("removed")
-    divRowProgress.remove();
+        divRowProgress.remove();
+        window.location.href = "cart.html";
+
+
 
 }
