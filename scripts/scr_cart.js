@@ -10,6 +10,8 @@ var link="" ;
 var price="" ;
 var divRowTitle;
 var divRowOrder;
+var divRowpriceOrder;
+var priceOrder=0;
 
 
 $(document).ready(function(){
@@ -56,6 +58,11 @@ function createItemsContent() {
     divRowTitle.innerHTML ="<p>"+itemsCount+" items in cart</p>";
     container.appendChild(divRowTitle);
 
+    divRowpriceOrder = document.createElement('div');
+    divRowpriceOrder.className="row";
+    divRowpriceOrder.id="priceOrder";
+    divRowpriceOrder.innerHTML ="<p>Order full price: <span id='priceOrderCount'>"+priceOrder+"</span> NIS</p>";
+
 
     i=0;
 
@@ -74,7 +81,7 @@ function createItemsContent() {
          price=item[7];
         dir="categories/"+cat;
         let priceFull=parseInt(price)*parseInt(count);
-
+        priceOrder=priceOrder+priceFull;
         var divRowItem = document.createElement('div');
         divRowItem.className="row";
 
@@ -108,8 +115,10 @@ function createItemsContent() {
         container.appendChild(divRowItem);
 
     }
+    container.appendChild(divRowpriceOrder);
 
     createOrderForm();
+    divRowpriceOrder.innerHTML ="<p>Order full price: <span id='priceOrderCount'>"+priceOrder+"</span> NIS</p>";
 
 
 }
@@ -125,11 +134,13 @@ function increaseCount(id) {
      // var price=document.getElementById("price-"+itemId).innerText;
      var newCount=count+1;
      var newPrice=newCount*price;
+
     document.getElementById("countInpt-"+itemId).value=newCount;
     document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+
     updateItemCountCart(itemId,newCount);
 
-
+    // updatePriceOrder();
 }
 
 function decreaseCount(id) {
@@ -137,11 +148,14 @@ function decreaseCount(id) {
 
     var count=parseInt(document.getElementById("countInpt-"+itemId).value);
     var price=parseInt(document.getElementById("price-"+itemId).innerText.split(" ")[0]);
+    if(count-1>0){
     var newCount=count-1;
     var newPrice=newCount*price;
-    if(count-1>0){
+
+
         document.getElementById("countInpt-"+itemId).value=newCount;
         document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+
         updateItemCountCart(itemId,newCount);
 
     }
@@ -156,6 +170,9 @@ function inputCangedCount(id) {
     var newPrice=count*price;
     if(count-1>0){
         document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+
+
+
         updateItemCountCart(itemId,count);
 
     }
@@ -165,6 +182,7 @@ function inputCangedCount(id) {
         var newPrice=newCount*price;
         input.value=newCount;
         document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+
         updateItemCountCart(itemId,newCount);
 
     }
@@ -176,6 +194,37 @@ function inputCangedCount(id) {
 
 
 }
+
+
+
+
+
+
+
+
+function updatePriceOrder(){
+    arr=getCartData();
+    arrKeys=getKeys(arr);
+    var i=0;
+    priceOrder=0;
+    for(i=0;i<arrKeys.length;i+=1){
+        var     itemId= arrKeys[i];
+       priceItem= parseInt(document.getElementById("price_full-"+itemId).innerText.split("-")[0]);
+        // console.log(priceItem);
+        // console.log(document.getElementById("price_full-"+itemId).innerText);
+        priceOrder=priceOrder+priceItem;
+    }
+
+    divRowpriceOrder.innerHTML ="<p>Order full price: <span id='priceOrderCount'>"+priceOrder+"</span> NIS</p>";
+}
+
+
+
+
+
+
+
+
 
 
 
@@ -209,6 +258,7 @@ function setCartData(o){
     arrKeys=getKeys(arr);
     itemsCount=arrKeys.length;
     divRowTitle.innerHTML ="<p>"+itemsCount+" items in cart</p>";
+    updatePriceOrder();
 
     return false;
 }
@@ -281,7 +331,6 @@ function deleteItemCart(id){
         // cartData[itemId][2] += 1;
 
         delete cartData[itemId];
-
 
 
     }
