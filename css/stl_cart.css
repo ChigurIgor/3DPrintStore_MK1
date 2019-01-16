@@ -35,21 +35,21 @@ color: blue;
 
 }
 
-.price{
+[id*="price-"]{
  color: black;
     font-size: 1.5em;
 }
-.price_full{
+[id*="price_full-"]{
  color: black;
     font-size: 1.5em;
 }
-.del{
+[id*="del-"]{
  color: red;
     font-size: 1.5em;
     cursor: pointer;
 }
 
-.del:hover{
+[id*="del-"]:hover{
    transform: scale(1.2);
 }
 

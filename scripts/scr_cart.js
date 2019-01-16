@@ -98,7 +98,7 @@ function createItemsContent() {
         "                    </div>\n" +
         "\n" +
         "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price_full-"+id+"\">"+priceFull+" NIS</p></div> </div>\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><p class=\"del\">Delete</p></div> </div>\n" +
+        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"del-"+id+"\" onclick='deleteItemCart(id)'>Delete</p></div> </div>\n" +
         "                </div>\n" +
         "            </div>"
     ;
@@ -124,6 +124,7 @@ function increaseCount(id) {
      var newPrice=newCount*price;
     document.getElementById("countInpt-"+itemId).value=newCount;
     document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+    updateItemCountCart(itemId,newCount);
 
 
 }
@@ -138,6 +139,8 @@ function decreaseCount(id) {
     if(count-1>0){
         document.getElementById("countInpt-"+itemId).value=newCount;
         document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+        updateItemCountCart(itemId,newCount);
+
     }
 }
 
@@ -150,6 +153,8 @@ function inputCangedCount(id) {
     var newPrice=count*price;
     if(count-1>0){
         document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+        updateItemCountCart(itemId,count);
+
     }
 
     if(count-1<=0){
@@ -157,6 +162,7 @@ function inputCangedCount(id) {
         var newPrice=newCount*price;
         input.value=newCount;
         document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+        updateItemCountCart(itemId,newCount);
 
     }
     // var rep = /[-.;":'a-zA-Zа-яА-Я]/;
@@ -226,8 +232,58 @@ function clearCart(){
 // alert("removed")
 }
 
+function updateItemCountCart(itemId,newCount){
+    var cartData = getCartData() || {}; // получаем данные корзины или создаём новый объект, если данных еще нет
+    //     // parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
+    //     itemId = itemId, // ID товара
+    //     catId = catId,
+    //     count = count; // стоимость товара
+    if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
+        cartData[itemId][1]= newCount;
+        // cartData[itemId][2] += 1;
+    }
+    // // if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
+    // //     // this.disabled = false; // разблокируем кнопку после обновления LS
+    // // }
+    // var cartData={};
+    //      cartData[itemId] = [ count];
+    // var cartData=count;
+    setCartData(cartData);
+    return false;
+}
+
+
+function deleteItemCart(id){
+    var     itemId= id.split("-")[1];
+    var item= document.getElementById("cart_item-"+itemId);
+    // item.parentNode.removeChild(item);
+    item.remove();
+
+    var cartData = getCartData() || {}; // получаем данные корзины или создаём новый объект, если данных еще нет
+    //     // parentBox = this.parentNode, // родительский элемент кнопки "Добавить в корзину"
+    //     itemId = itemId, // ID товара
+    //     catId = catId,
+    //     count = count; // стоимость товара
+    if(cartData.hasOwnProperty(itemId)){ // если такой товар уже в корзине, то добавляем +1 к его количеству
+        // cartData.splice(itemId);
+        // console.log(itemId);
+        // cartData[itemId]= null;
+
+
+        // cartData[itemId][2] += 1;
+
+        delete cartData[itemId];
 
 
 
+    }
+    // // if(!setCartData(cartData)){ // Обновляем данные в LocalStorage
+    // //     // this.disabled = false; // разблокируем кнопку после обновления LS
+    // // }
+    // var cartData={};
+    //      cartData[itemId] = [ count];
+    // var cartData=count;
+    setCartData(cartData);
+}
 
 
