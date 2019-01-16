@@ -8,7 +8,7 @@ var descr="" ;
 var name="" ;
 var link="" ;
 var price="" ;
-
+var divRowTitle;
 
 
 $(document).ready(function(){
@@ -41,9 +41,9 @@ function createItemsContent() {
     i=0;
 
 
-    var divRow = document.createElement('div');
-    divRow.className="row";
-    divRow.id="title";
+     divRowTitle = document.createElement('div');
+    divRowTitle.className="row";
+    divRowTitle.id="title";
 
     var j=0;
     var index=link;
@@ -52,8 +52,8 @@ function createItemsContent() {
 
 
 
-    divRow.innerHTML ="<p>"+itemsCount+" items in cart</p>";
-    container.appendChild(divRow);
+    divRowTitle.innerHTML ="<p>"+itemsCount+" items in cart</p>";
+    container.appendChild(divRowTitle);
 
 
     i=0;
@@ -98,7 +98,7 @@ function createItemsContent() {
         "                    </div>\n" +
         "\n" +
         "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price_full-"+id+"\">"+priceFull+" NIS</p></div> </div>\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"del-"+id+"\" onclick='deleteItemCart(id)'>Delete</p></div> </div>\n" +
+        "                    <div class=\"col-2\"><div class=\"row\"><img src='images/support/icon_trash_red.png' alt='Delete' id=\"del-"+id+"\" onclick='deleteItemCart(id)'></div> </div>\n" +
         "                </div>\n" +
         "            </div>"
     ;
@@ -202,6 +202,11 @@ function getCartData(){
 // Записываем данные в LocalStorage
 function setCartData(o){
     localStorage.setItem('cart', JSON.stringify(o));
+    arr=getCartData();
+    arrKeys=getKeys(arr);
+    itemsCount=arrKeys.length;
+    divRowTitle.innerHTML ="<p>"+itemsCount+" items in cart</p>";
+
     return false;
 }
 
