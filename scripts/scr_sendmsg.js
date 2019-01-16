@@ -5,6 +5,15 @@ function sendmsg() {
     var txt = document.getElementById("txtMsg").value;
     var address = document.getElementById("emailAdrs").value;
 
+    if(name=="" || email==""|| phone==""|| address==""){
+        alert("Some order registration field is empty");
+        return;
+    }
+
+
+
+    var divRowProgress;
+
     // var year=Date.now().getFullYear();
     // var month=Date.now().getMonth();
     // var date=Date.now().getDate();
@@ -78,6 +87,11 @@ function sendmsg() {
     }
 console.log(arr);
 
+        divRowProgress = document.createElement('div');
+        divRowProgress.className="row";
+        divRowProgress.id="divRowProgress";
+        divRowProgress.innerHTML ="<p>Sending...</p>";
+        container.appendChild(divRowProgress);
 
     var http = new XMLHttpRequest();
     var url = 'https://printstore.herokuapp.com/orderadd';
@@ -89,7 +103,7 @@ console.log(arr);
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
-            alert("Your order has been sent");
+            // alert("Your order has been sent");
             clearCart();
         }
     };
@@ -111,4 +125,6 @@ function getCartData(){
 function clearCart(){
     localStorage.removeItem('cart');
 // alert("removed")
+    divRowProgress.remove();
+
 }
