@@ -4,7 +4,7 @@ var itemId="";
 var itemsInside=5;
 var itemsInLine=4;
 var dir="";
-
+var divRowProgress;
 
 function createCategory() {
 
@@ -170,6 +170,13 @@ $(document).ready(function(){
         dir="categories/"+catId;
 
     }
+    divRowProgress = document.createElement('div');
+    divRowProgress.className="row";
+    divRowProgress.id="divRowProgress";
+    divRowProgress.innerHTML ="<p>Download...</p>";
+    container.appendChild(divRowProgress);
+
+
 
 
     getItemData(catId);
@@ -195,6 +202,8 @@ function getItemData(catId) {
         console.log(response);
         var duce = jQuery.parseJSON(response);
         if(duce.length>0){
+            divRowProgress.remove();
+
             var id = duce[0]._id;
             var cat = duce[0].cat;
             var descr = duce[0].descr;
