@@ -12,6 +12,7 @@ var descr="" ;
 var name="" ;
 var link="" ;
 var price="" ;
+var divRowProgress;
 
 
 
@@ -26,6 +27,14 @@ $(document).ready(function(){
     itemId= queries[1].split("=")[1];
 
     // console.log(itemId);
+
+    divRowProgress = document.createElement('div');
+    divRowProgress.className="row";
+    divRowProgress.id="divRowProgress";
+    divRowProgress.innerHTML ="<p>Download...</p>";
+    container.appendChild(divRowProgress);
+
+
     getItemData(itemId);
 });
 
@@ -62,6 +71,8 @@ function getItemData(itemId) {
             console.log(name);
             console.log(link);
             console.log(price);
+            divRowProgress.remove();
+
 
             createItemsContent(id,cat,descr,name,link,price);
         }
@@ -163,13 +174,13 @@ var j=0;
                 "                </div>\n" +
                 "                <div class=\"col-6\">\n" +
                 "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_ttl\" onclick='clearCart()'>"+name+"</p>\n" +
+                "                        <p class=\"item_ttl\">"+name+"</p>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_price\" onclick='showCartData()'>"+price+" NIS</p>\n" +
+                "                        <p class=\"item_price\" >"+price+" NIS</p>\n" +
                 "                    </div>\n" +
                 "<div class=\"row\">\n" +
-                "                        <p class=\"item_dscr\" onclick='showCartData()'>"+descr+"</p>\n" +
+                "                        <p class=\"item_dscr\" >"+descr+"</p>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"row\">\n" +
                 "                        <div class=\"col-5\">\n" +
