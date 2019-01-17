@@ -73,8 +73,7 @@ function createItems(duce) {
 
     }
 
-
-
+    itemsInside=duce.length;
     for(i=0; i<duce.length;i += itemsInLine) {
         // alert("i= "+i);
 
