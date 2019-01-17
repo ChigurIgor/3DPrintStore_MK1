@@ -89,7 +89,7 @@ function createItemsContent() {
         divRowItem.innerHTML ="<p>"+itemsCount+" items in cart</p>";
 
     divRowItem.innerHTML=" " +
-        " <div class=\"col-3\"><div id=\"item_img_cont-"+id+"\" class=\"row\"><img src=\"images/"+dir+"/"+link+".jpg\"></div> </div>\n" +
+        " <div class=\"col-3\"><div id=\"item_img_cont-"+id+"\" class=\"row\" onclick=\"openItem(id)\"><img src=\"images/"+dir+"/"+link+".jpg\"  ></div> </div>\n" +
         "            <div class=\"col-5\">\n" +
         "                <div id=\"item_name_cont-"+id+"\" class=\"row\"><p>"+name+"</p></div>\n" +
         "                <div id=\"item_desc_cont-"+id+"\" class=\"row\"><p>"+descr+"</p></div>\n" +
@@ -371,3 +371,11 @@ function     createOrderForm(){
 }
 
 
+function openItem(id) {
+    var catId="";
+    // var itemId = parseInt(id.split("-")[1],10);
+    var itemId = id.split("-")[1];
+    var queryString = "?cat=" + catId+"&item="+itemId;
+    window.location.href = "item.html" + queryString;
+
+}

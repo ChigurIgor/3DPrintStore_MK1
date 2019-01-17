@@ -13,6 +13,7 @@ var name="" ;
 var link="" ;
 var price="" ;
 var divRowProgress;
+const delay = ms => new Promise(res => setTimeout(res, ms));
 
 
 
@@ -267,8 +268,12 @@ function getCartData(){
     return JSON.parse(localStorage.getItem('cart'));
 }
 // Записываем данные в LocalStorage
-function setCartData(o){
+async function setCartData(o) {
     localStorage.setItem('cart', JSON.stringify(o));
+    $('#notice').fadeIn();
+    await delay(2000);
+    $('#notice').fadeOut();
+
     return false;
 }
 
