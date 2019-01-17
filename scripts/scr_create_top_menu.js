@@ -20,10 +20,10 @@ function createTopMenu() {
             "                           <p>Souvenirs</p>\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-4\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                            <p>Print your model</p>\n" +
+            "                            <p>Toys</p>\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-5\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                           <p>Other</p>\n" +
+            "                            <p>Print your model</p>\n" +
             "                        </div>\n" +
             "\n" +
             "                    </div>\n" +

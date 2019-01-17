@@ -1,0 +1,36 @@
+#btn_scroll{
+     position: fixed;
+     bottom: 10vh;
+     right: 5vh;
+     width: 100px;
+     height: 100px;
+     cursor: pointer;
+
+ }
+
+#btn_scroll:active{
+    transform: translateY(4px);
+
+
+}
+
+
+/*--------------------------------------------------------------------- For mobile phones:  ---------------------------------------------------*/
+
+
+@media only screen and (orientation: portrait)  {
+
+    #btn_scroll{
+        position: fixed;
+        bottom: 5vh;
+        right: 2.5vh;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+
+    }
+
+
+}
+
+

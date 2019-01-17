@@ -7,13 +7,19 @@
 
 #catalog_title{
     text-align: center;
-    color: whitesmoke;
+    color: transparent;
     font-size: 2em;
 }
 
 [id*="ctlg_item-"]{
-   padding: 0;
+   /*padding: 0;*/
     position: relative;
+    cursor: pointer;
+    padding: 2em;
+}
+[id*="ctlg_item-"] img:hover{
+  transform: scale(1.2);
+    transition: 5000ms;
 }
 
 [id*="ctlg_item-"] img{
