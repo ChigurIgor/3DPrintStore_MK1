@@ -79,6 +79,7 @@ function sendMsg() {
         price = item[7];
         obj.id = id;
         obj.count = count;
+        obj.nameItem = nameItem;
         obj.price = price;
 
         var jsonString= JSON.stringify(obj);

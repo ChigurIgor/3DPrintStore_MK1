@@ -3,6 +3,7 @@
     position: relative;
     /*height: 30vh;*/
     padding: 5%;
+    cursor: pointer;
 }
 
 [id*="ctlg_item-"]:hover{

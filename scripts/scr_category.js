@@ -201,6 +201,8 @@ function getItemData(catId) {
         // console.log("textStatus: "+textStatus);
         console.log(response);
         var duce = jQuery.parseJSON(response);
+        divRowProgress.innerHTML ="<p>There are no products in this category yet, but they will be soon.</p>";
+
         if(duce.length>0){
             divRowProgress.remove();
 
