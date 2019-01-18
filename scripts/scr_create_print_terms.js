@@ -4,7 +4,7 @@ function createPrintTerms() {
 
 
         div.innerHTML =
-        "     <div class=\"row\"><h1>Shipping and payment</h1></div>\n" +
+        "     <div class=\"row\"><h1>Printing Your Model</h1></div>\n" +
             "            <div class=\"row\"><h2>1. Delivery and payment of the order</h2></div>\n" +
             "            <div class=\"row\"><p>1. Payment must be made in cash upon delivery.</p></div>\n" +
             "            <div class=\"row\"><p>2. Goods are delivered free of charge according to the schedule.</p></div>\n" +
