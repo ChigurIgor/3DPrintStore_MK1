@@ -7,11 +7,11 @@ function createTopMenu() {
             "                <div  class=\"col-10 offset-1\" >\n" +
             "                    <div class=\"row\">\n" +
             "                        <div id=\"tm_item-0\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                            <p>Scooter parts</p>\n" +
+            "                            <p>Scooter Parts</p>\n" +
             "                            <!--<p>Xiaomi Mijia 365 parts</p>-->\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-1\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                            <p>Spare parts</p>\n" +
+            "                            <p>Spare Parts</p>\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-2\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "                           <p>Vases</p>\n" +
@@ -22,8 +22,8 @@ function createTopMenu() {
             "                        <div id=\"tm_item-4\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "                            <p>Toys</p>\n" +
             "                        </div>\n" +
-            "                        <div id=\"tm_item-5\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                            <p>Print your model</p>\n" +
+            "                        <div id=\"tm_item-5\" class=\"col-2\" onclick=\"location.href='print_your_model.html'\">\n" +
+            "                            <p>Print Your Model</p>\n" +
             "                        </div>\n" +
             "\n" +
             "                    </div>\n" +
