@@ -4,9 +4,10 @@ function createFooter(page) {
 
 
         div.innerHTML =
-        "              <p>Footer</p>"
+        // "              <p>Footer</p>"
+        "              <p>Tel: 054 904 2727</p>"
 
-            ;
+        ;
 
 
 
