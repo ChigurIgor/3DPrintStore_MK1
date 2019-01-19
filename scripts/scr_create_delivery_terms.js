@@ -1,7 +1,7 @@
 function createDeliveryTerms(page) {
 
     var div = document.createElement('div');
-
+        div.id="notice";
 
         div.innerHTML =
         "     <div class=\"row\"><h1>Shipping and payment</h1></div>\n" +
@@ -24,8 +24,12 @@ function createDeliveryTerms(page) {
             "                The product must be free from signs of use and damage.</p></div>\n" +
             "\n" +
             "\n" +
-            "            <div class=\"row\"><h2>3. Additional services</h2></div>"
-            ;
+            "            <div class=\"row\"><h2>3. Additional services</h2></div> \n" +
+            "\n" +
+
+             "            <div class=\"row\"><p>1.We can make the product according to your models. See more at <span><a href='print_your_model.html'><span>\"Printing Your Model\"</span></a> </span> </p></div>\n"
+
+    ;
 
 
 

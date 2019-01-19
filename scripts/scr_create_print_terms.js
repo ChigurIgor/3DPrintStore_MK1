@@ -1,6 +1,7 @@
 function createPrintTerms() {
 
     var div = document.createElement('div');
+    div.id="notice";
 
 
         div.innerHTML =
@@ -13,7 +14,7 @@ function createPrintTerms() {
             "            <div class=\"row\"><p>5. Delivery terms are the same as for all other products. They can be found on the page<span><a href='delivery.html'><span>\"Delivery and Payment\"</span></a> </span> </p></div>\n" +
             "\n" +
             "            <div class=\"row\"><h2>2. Return of goods</h2></div>\n" +
-            "            <div class=\"row\"><p>Non-standard products are non-refundable.</p></div>\n" +
+            "            <div class=\"row\"><p>1. Non-standard products are non-refundable.</p></div>\n" +
             "\n" +
             "\n"
             // "            <div class=\"row\"><h2>3. Additional services</h2></div>"
