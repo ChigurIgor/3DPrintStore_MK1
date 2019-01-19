@@ -1,6 +1,6 @@
 #header{
     background: rgb(38,96,165);
-    min-height: 18vh;
+    height: 15vh;
     color: white;
 }
 
@@ -19,12 +19,27 @@
 #logo img{
      height: 15vh;
      width: 15vh;
-     background: whitesmoke;
- }
+     /*background: whitesmoke;*/
+    filter: invert(100%);
+    transform: scale(0.9);
+
+
+}
+#logo img:hover{
+    transform: scale(1);
+}
+
+#mCartRow  {
+    /*background-color: pink;*/
+    padding-left: 50%;
+    height: 15vh;
+}
+
 
 #mCart img{
     height: 10vh;
     width: 10vh;
+
 }
 
 #mCart img:hover{
@@ -34,8 +49,10 @@
 transform: translateY(1em)}
 
 #mCart p{
-    padding-top: 5vh;
+    /*padding-top: 5vh;*/
     padding-left: 1em;
+    font-size: 1.5em;
+    /*color: red;*/
 }
 
 #mDeliv{

@@ -16,9 +16,20 @@ function createHeader(page) {
             "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
             "                </div>\n" +
             "                <div id=\"mCart\" class=\"col-3\">\n" +
-            "<div class='row'>\n"+
+            "<div id=\"mCartRow\" class='row'>\n"+
+            "                <div id=\"mCartCol\" class=\"col-12\">\n" +
+            "<div id=\"\" class='row'>\n"+
+
             "                   <a href=\"cart.html\"> <img src=\"images/support/icon_cart.png\"></a>\n" +
-            "                   <a href=\"cart.html\"><p>Your cart</p></a>\n"+
+
+            "</div>\n" +
+            "<div id=\"\" class='row'>\n"+
+
+            "                   <a href=\"cart.html\"><p>Сart</p></a>\n"+
+
+            "</div>\n" +
+
+            "</div>\n" +
             "</div>\n" +
             "</div>\n" +
             "                </div>\n" +

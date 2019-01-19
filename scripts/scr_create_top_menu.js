@@ -11,16 +11,16 @@ function createTopMenu() {
             "                            <!--<p>Xiaomi Mijia 365 parts</p>-->\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-1\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                            <p>Spare Parts</p>\n" +
+            "                            <p>Keychains</p>\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-2\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                           <p>Vases</p>\n" +
+            "                           <p>GoPro Parts</p>\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-3\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                           <p>Souvenirs</p>\n" +
+            "                           <p>Toys</p>\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-4\" class=\"col-2\" onclick='openCategory(id)'>\n" +
-            "                            <p>Toys</p>\n" +
+            "                            <p>Ring and Earrings</p>\n" +
             "                        </div>\n" +
             "                        <div id=\"tm_item-5\" class=\"col-2\" onclick=\"location.href='print_your_model.html'\">\n" +
             "                            <p>Print Your Model</p>\n" +

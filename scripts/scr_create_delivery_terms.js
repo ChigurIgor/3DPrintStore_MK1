@@ -16,8 +16,8 @@ function createDeliveryTerms(page) {
             "                Wednesday -- Tel Aviv-Jaffa<br>\n" +
             "                Thursday -- Rishon Letsion<br>\n" +
             "                </p></div>\n" +
-            "            <div class=\"row\"><p>5. Delivery on weekends when ordering from 100 NIS.</p></div>\n" +
-            "            <div class=\"row\"><p>6. Delivery out of schedule when ordering from 100 NIS..</p></div>\n" +
+            "            <div class=\"row\"><p>5. Delivery on weekends when ordering from 100 ₪.</p></div>\n" +
+            "            <div class=\"row\"><p>6. Delivery out of schedule when ordering from 100 ₪..</p></div>\n" +
             "\n" +
             "            <div class=\"row\"><h2>2. Return of goods</h2></div>\n" +
             "            <div class=\"row\"><p>Products can be returned within 14 days with a passport and a receipt.<br>\n" +

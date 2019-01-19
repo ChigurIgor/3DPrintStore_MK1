@@ -178,7 +178,7 @@ var j=0;
                 "                        <p class=\"item_ttl\">"+name+"</p>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_price\" >"+price+" NIS</p>\n" +
+                "                        <p class=\"item_price\" >"+price+" ₪</p>\n" +
                 "                    </div>\n" +
                 "<div class=\"row\">\n" +
                 "                        <p class=\"item_dscr\" >"+descr+"</p>\n" +

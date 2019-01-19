@@ -61,7 +61,7 @@ function createItemsContent() {
     divRowpriceOrder = document.createElement('div');
     divRowpriceOrder.className="row";
     divRowpriceOrder.id="priceOrder";
-    divRowpriceOrder.innerHTML ="<p>Order full price: <span id='priceOrderCount'>"+priceOrder+"</span> NIS</p>";
+    divRowpriceOrder.innerHTML ="<p>Order full price: <span id='priceOrderCount'>"+priceOrder+"</span> ₪</p>";
 
 
     i=0;
@@ -96,7 +96,7 @@ function createItemsContent() {
         "            </div>\n" +
         "            <div class=\"col-4\">\n" +
         "                <div id=\"item_count_cont-"+id+"\" class=\"row\">\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price-"+id+"\">"+price+" NIS</p></div> </div>\n" +
+        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price-"+id+"\">"+price+" ₪</p></div> </div>\n" +
         "                    <div class=\"col-6\">\n" +
         "                        <div class=\"row\">\n" +
         "                            <div  id=\"decr-"+id+"\" class=\"col-3 offset-1\"><div id=\"decrRow-"+id+"\" class=\"row\" onclick='decreaseCount(id)'><p >-</p></div> </div>\n" +
@@ -105,7 +105,7 @@ function createItemsContent() {
         "                        </div>\n" +
         "                    </div>\n" +
         "\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price_full-"+id+"\">"+priceFull+" NIS</p></div> </div>\n" +
+        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price_full-"+id+"\">"+priceFull+" ₪</p></div> </div>\n" +
         "                    <div class=\"col-2\"><div class=\"row\"><img src='images/support/icon_trash_red.png' alt='Delete' id=\"del-"+id+"\" onclick='deleteItemCart(id)'></div> </div>\n" +
         "                </div>\n" +
         "            </div>"
@@ -118,7 +118,7 @@ function createItemsContent() {
     container.appendChild(divRowpriceOrder);
 
     createOrderForm();
-    divRowpriceOrder.innerHTML ="<p>Order full price: <span id='priceOrderCount'>"+priceOrder+"</span> NIS</p>";
+    divRowpriceOrder.innerHTML ="<p>Order full price: <span id='priceOrderCount'>"+priceOrder+"</span> ₪</p>";
 
 
 }
@@ -136,7 +136,7 @@ function increaseCount(id) {
      var newPrice=newCount*price;
 
     document.getElementById("countInpt-"+itemId).value=newCount;
-    document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+    document.getElementById("price_full-"+itemId).innerText=newPrice+" ₪";
 
     updateItemCountCart(itemId,newCount);
 
@@ -154,7 +154,7 @@ function decreaseCount(id) {
 
 
         document.getElementById("countInpt-"+itemId).value=newCount;
-        document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+        document.getElementById("price_full-"+itemId).innerText=newPrice+" ₪";
 
         updateItemCountCart(itemId,newCount);
 
@@ -169,7 +169,7 @@ function inputCangedCount(id) {
     var price=parseInt(document.getElementById("price-"+itemId).innerText.split(" ")[0]);
     var newPrice=count*price;
     if(count-1>0){
-        document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+        document.getElementById("price_full-"+itemId).innerText=newPrice+" ₪";
 
 
 
@@ -181,7 +181,7 @@ function inputCangedCount(id) {
         var newCount=1;
         var newPrice=newCount*price;
         input.value=newCount;
-        document.getElementById("price_full-"+itemId).innerText=newPrice+" NIS";
+        document.getElementById("price_full-"+itemId).innerText=newPrice+" ₪";
 
         updateItemCountCart(itemId,newCount);
 
@@ -215,7 +215,7 @@ function updatePriceOrder(){
         priceOrder=priceOrder+priceItem;
     }
 
-    divRowpriceOrder.innerHTML ="<p>Order full price: <span id='priceOrderCount'>"+priceOrder+"</span> NIS</p>";
+    divRowpriceOrder.innerHTML ="<p>Order full price:<span id='priceOrderCount'>"+priceOrder+"</span> ₪</p>";
 }
 
 

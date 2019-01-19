@@ -17,11 +17,13 @@
 
 
 [id*="tm_item-"]{
+    white-space: nowrap;
+
     border-right: blue;
     border-right-style: solid;
     border-right-width: 1px;
 
-    font-size: 1.2em;
+    font-size: 1.6em;
     color: blue;
     font-weight: bold;
     text-align: center;
@@ -29,7 +31,7 @@
 }
 
 [id*="tm_item-"]:hover{
-    font-size: 1.5em;
+    font-size: 1.8em;
     font-weight: bold;
 }
 
@@ -37,10 +39,12 @@
     color: blue;
 }
 
-#tm_item-6{
+#tm_item-5{
     border-right: transparent;
 }
 
+
+
 [id*="tm_item-"] p{
-padding-top: 10%
+padding-top: 7.5%
 }
