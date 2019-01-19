@@ -13,7 +13,7 @@ function createHeader(page) {
             "                </div>\n" +
             "\n" +
             "                <div id=\"mDeliv\" class=\"col-3\">\n" +
-            "                    <a href=\"delivery.html\"> <p>Shipping and payment</p></a>\n" +
+            "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
             "                </div>\n" +
             "                <div id=\"mCart\" class=\"col-3\">\n" +
             "<div class='row'>\n"+
