@@ -4,6 +4,8 @@
     border-bottom-color: blue;
     cursor: pointer;
     height: 8vh;
+    font-family: 'Carrois Gothic SC', sans-serif;
+
 }
 
 #top_menu{
@@ -37,6 +39,10 @@
 
 [id*="tm_item-"] a{
     color: blue;
+    background-color: #666666;
+    margin: 0;
+    padding: 0;
+
 }
 
 #tm_item-5{
@@ -46,5 +52,6 @@
 
 
 [id*="tm_item-"] p{
-padding-top: 7.5%
+    width: 100%;
+
 }

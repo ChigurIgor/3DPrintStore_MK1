@@ -30,7 +30,7 @@
 .item_price{
 color: red;
     margin: 0 1em 1em 1em;
-    font-size: 1.5em;
+    font-size: 2em;
 }
 
 .item_dscr{
@@ -66,17 +66,21 @@ color: red;
 #addRow{
     width: 100%;
     text-align: center;
-    border-color: gray;
-    border-style: solid;
+    /*border-color: gray;*/
+    /*border-style: solid;*/
     border-width: 2px;
     border-radius: 2vh;
     margin: 0;
+    padding-left: 0.2em;
 }
-#addRow:hover{
-    background-color: #9cff94;
+#addRow img{
+    padding: 1vh;
 }
-#addRow:active{
-    background-color: #87e77f;
+#addRow img:hover{
+    transform: scale(1.1);
+}
+#addRow img:active{
+    /*background-color: #87e77f;*/
     transform: translateY(1vh);
 }
 
@@ -89,8 +93,8 @@ color: red;
 #countRow{
     width: 100%;
     text-align: center;
-    border-color: gray;
-    border-style: solid;
+    /*border-color: gray;*/
+    /*border-style: solid;*/
     border-width: 2px;
     border-radius: 2vh;
     margin: 0;
@@ -100,7 +104,9 @@ color: red;
     width: 100%;
     border-radius: 2vh;
     text-align: center;
-
+    background-color: white;
+    border-style: solid;
+    border-color: gray;
 }
 
 #decr{
@@ -113,20 +119,24 @@ color: red;
 
 }
 #decrRow{
-    border-color: gray;
-    border-style: solid;
-    border-width: 2px;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-    border-radius: 2vh;
+    /*border-color: gray;*/
+    /*border-style: solid;*/
+    /*border-width: 2px;*/
+    /*margin: 0;*/
+    /*width: 100%;*/
+    /*text-align: center;*/
+    /*border-radius: 2vh;*/
 
 }
-#decrRow:hover{
-    background-color: #ffa7a3;
+
+#decrRow img{
+    padding: 1vh;
+}
+#decrRow img:hover{
+    transform: scale(1.1);
 }
 
-#decrRow:active{
-    background-color: #e59693;
+#decrRow img:active{
+    /*background-color: #e59693;*/
     transform: translateY(1vh);
 }

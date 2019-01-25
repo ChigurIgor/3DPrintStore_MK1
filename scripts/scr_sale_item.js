@@ -186,9 +186,9 @@ var j=0;
                 "                    <div class=\"row\">\n" +
                 "                        <div class=\"col-5\">\n" +
                 "                            <div class=\"row\">\n" +
-                "                                <div id=\"decr\" class=\"col-4\"><div class=\"row\"><div id=\"decrRow\" onclick='decreaseCount()'><p>-</p></div> </div></div>\n" +
+                "                                <div id=\"decr\" class=\"col-4\"><div class=\"row\"><div id=\"decrRow\" onclick='decreaseCount()'><img class=\"btn_cart\" src=\"images/support/icon_decrease.png\" alt=\"decrease\" ></div> </div></div>\n" +
                 "                                <div id=\"count\" class=\"col-4\"><div class=\"row\"><div id=\"countRow\"><input id=\"countInpt\" type=\"text\" size=\"40\" value='1'></div> </div></div>\n" +
-                "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\" onclick='increaseCount()'><p>+</p></div> </div></div>\n" +
+                "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\" onclick='increaseCount()'><img class=\"btn_cart\" src=\"images/support/icon_increase.png\" alt=\"increase\" ></div> </div></div>\n" +
 
                 "                            </div>\n" +
                 "                        </div>\n" +

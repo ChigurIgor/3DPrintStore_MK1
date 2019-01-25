@@ -113,7 +113,7 @@ var j=0;
                 "                                        <div class=\"col-12\"> " +
                 "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+link+".jpg\" alt=\"sdf\"></div>\n" +
                 "<div class='row'> <p class=\"item_ttl\">"+name+"</p></div>" +
-                "<div class='row'> <p class=\"item_price\">"+price+" ₪</p></div>" +
+                "<div id=\"item_price_row-"+id+"\" class='row'> <p class=\"item_price\">"+price+" ₪</p></div>" +
   "                            </div>";
 
 
