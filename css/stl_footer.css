@@ -1,7 +1,7 @@
 #footer{
     background: rgb(38,96,165);
     color: white;
-    font-size: 2em;
+    font-size: 1.5em;
     min-height: 10vh;
     padding: 0;
     margin: 10vh 0 0 0;
@@ -17,4 +17,8 @@
     /*background-color: red;*/
     vertical-align: middle;
 
+}
+
+#mDeliv p{
+    color: white;
 }

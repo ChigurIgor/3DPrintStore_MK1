@@ -109,9 +109,9 @@ var j=0;
 
 
             div.innerHTML =
-                "                                    <div class=\"row\" id=\"ctlg_item-"+id+"\"  onclick=\"openItem(id)\">\n" +
+                "                                    <div class=\"row\" id=\"ctlg_item-"+id+"\"  onclick=\"openItem(id)\" onmouseover='mHover(id)' onmouseout='mUnHover(id)'>\n" +
                 "                                        <div class=\"col-12\"> " +
-                "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+link+".jpg\" alt=\"sdf\"></div>\n" +
+                "<div class='row' id='item_imgRow'> <img class=\"item_img\" src=\"images/"+dir+"/"+link+".jpg\" alt=\"sdf\"></div>\n" +
                 "<div class='row'> <p class=\"item_ttl\">"+name+"</p></div>" +
                 "<div id=\"item_price_row-"+id+"\" class='row'> <p class=\"item_price\">"+price+" ₪</p></div>" +
   "                            </div>";
@@ -138,6 +138,32 @@ var j=0;
 
 }
 
+
+function mHover(id) {
+    var itemId = id.split("-")[1];
+    // alert(id)
+    let div=document.getElementById(id);
+    let divImg=div.getElementsByClassName("item_img")[0];
+    let divTtl=div.getElementsByClassName("item_ttl")[0];
+    let divPrice=div.getElementsByClassName("item_price")[0];
+        divImg.style.transform="scale(1.2)"
+    divTtl.style.textShadow="gray 1px 1px"
+    divPrice.style.textShadow="gray 1px 1px"
+        // divImg.style.transform = "rotate(7deg)"
+
+}
+
+function mUnHover(id) {
+    var itemId = id.split("-")[1];
+    // alert(id)
+    let div=document.getElementById(id);
+    let divImg=div.getElementsByClassName("item_img")[0];
+    let divTtl=div.getElementsByClassName("item_ttl")[0];
+    let divPrice=div.getElementsByClassName("item_price")[0];
+    divImg.style.transform="scale(1)"
+    divTtl.style.textShadow=""
+    divPrice.style.textShadow=""
+}
 
 
 function openItem(id) {

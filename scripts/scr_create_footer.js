@@ -1,13 +1,11 @@
 function createFooter(page) {
 
     var div = document.createElement('div');
+                div.className="row";
+                div.id="footerRow";
 
-
-        div.innerHTML =
-        // "              <p>Footer</p>"
-        "              <p>Tel: 054 904 2727</p>\n"+
-
-           " <div id=\"mDeliv\" class=\"col-3\">\n" +
+        div.innerHTML ="<div class='col-4' id='cont-1'><p>Tel: 054 904 2727</p></div>"+
+           " <div id=\"mDeliv\" class=\"col-4 offset-4\">\n" +
     "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
     "                </div>\n"
 

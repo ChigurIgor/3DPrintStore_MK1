@@ -37,11 +37,10 @@
     font-weight: bold;
 }
 
+
 [id*="tm_item-"] a{
     color: blue;
-    background-color: #666666;
-    margin: 0;
-    padding: 0;
+
 
 }
 
@@ -53,5 +52,15 @@
 
 [id*="tm_item-"] p{
     width: 100%;
+    margin: 0;
+    padding: auto;
+    text-align: center;
+    vertical-align: middle;
+}
+
+[id*="tm_item-"] .row{
+    vertical-align: middle;
+    line-height: 8vh;
+
 
 }
