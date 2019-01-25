@@ -64,8 +64,10 @@ let link=id+"_lg";
             "    </div>\n" +
 
             "    <div id=\"bigImg\" class=\"col-9\" align=\"center\">\n" +
+            "<div class='row'>\n"+
             "    <img  src=\""+mySrc+"\" alt=\"" + mySrc + "\" >\n" +
             // "    <p>" + xx + "</p>\n" +
+            "    </div>\n" +
             "    </div>\n" +
 
 
@@ -87,24 +89,17 @@ let link=id+"_lg";
 
 
 
-    // div.position="absolute";
-    div.zIndex=10;
-    // div.align="center";
+    div.style.position="absolute";
+    div.style.zIndex=10;
+    div.style.align="center";
     div.className="row";
-    // div.id="bigImgRow";
-    // div.minHeight="100em";
-    div.backgroundColor="rgb(255,0,0)";
-    // div.background="rgba(0,0,0,0.2)";
-    // hcont.style.background="rgba(0,0,0,0.7)";
-    // sd_menu.style.zIndex=1;
+    div.id="bigImgRow";
+    div.style.minHeight="100vh";
+    div.style.paddingTop="5vh";
+    div.style.backgroundColor="rgba(0,0,0,0.7)";
 
-    // document.body.prepend(div);
-   let container= document.body.getElementsByClassName("container-fluid")[0];
-   container.position="relative";
-        container.prepend(div);
-    // row_2.insertBefore(div, row_2.firstChild);
-
-    // document.body.style.overflowY="hidden";
+    document.body.prepend(div);
+    document.body.style.overflowY="hidden";
     //
     // var end = parseInt(GLOBAL_ID.split("-")[1],10);
     // // alert(parseInt(GLOBAL_ID.split("item-")[1],10));
@@ -125,30 +120,29 @@ let link=id+"_lg";
 function hidePicture() {
     GLOBAL_ID=0;
 
-    //
-    //
-    // // div.innerHTML =                 "    <img class=\"bigImg\" src=\""+mySrc+"\" alt=\"" + mySrc + "\" >\n" ;
-    //
-    //
-    // var parent = document.getElementById("hcont");
-    // var child = document.getElementById("bigImgRow");
-    // parent.removeChild(child);
-    // hcont.style.background="rgba(0,0,0,0.0)";
-    // sd_menu.style.zIndex=6;
-    //
-    // document.body.style.overflowY="visible";
+
+
+    // div.innerHTML =                 "    <img class=\"bigImg\" src=\""+mySrc+"\" alt=\"" + mySrc + "\" >\n" ;
+
+
+    var parent = document.body;
+    var child = document.getElementById("bigImgRow");
+    parent.removeChild(child);
+
+
+    document.body.style.overflowY="visible";
 
 
 }
 
 function myHoverX(id) {
-    // document.getElementById(id).style.transform = "scale(1.1)";
-    // document.getElementById("bigImgX").getElementsByTagName("img")[0].src = "../Images/Support/icon_close_r.png";
+    document.getElementById(id).style.transform = "scale(1.1)";
+    document.getElementById("bigImgX").getElementsByTagName("img")[0].src = "./images/support/icon_close_r.png";
 }
 function myUnHoverX(id) {
-    // document.getElementById(id).style.transform = "scale(1)";
-    // document.getElementById(id).style.zIndex = 0;
-    // document.getElementById("bigImgX").getElementsByTagName("img")[0].src = "../Images/Support/icon_close.png";
+    document.getElementById(id).style.transform = "scale(1)";
+    document.getElementById(id).style.zIndex = 0;
+    document.getElementById("bigImgX").getElementsByTagName("img")[0].src = "./images/support/icon_close.png";
 }
 
 function myHoverArrow(id) {
