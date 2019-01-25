@@ -1,0 +1,110 @@
+
+#bigImgRow{
+    height: 100vh;
+    background-color: #9cff94;
+}
+
+#bigImg{
+
+}
+
+#bigImg img {
+    height: 38em;
+    width: 38em;
+    margin-top: 1.5em;
+    border-top-left-radius: 10em;
+    border-bottom-right-radius: 10em;
+    border-style: solid;
+    border-color: white;
+    border-width: 0.5em;
+}
+#bigImgX img{
+    height: 5em;
+    width: 5em;
+    padding-top: 1.5em;
+    padding-right: 1.5em;
+    alignment: left;
+}
+
+#arrowLeft{
+    height: 38em;
+    width: 38em;
+    padding-top: 1.5em;
+    alignment: center;
+}
+#arrowLeft img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 30%;
+    margin: auto;
+}
+
+#arrowRight{
+    height: 38em;
+    width: 38em;
+    padding-top: 1.5em;
+    alignment: center;
+
+}
+
+#arrowRight img{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 30%;
+    margin: auto;
+}
+
+
+/*!*--------------------------------------------------------------------- For mobile phones:  ---------------------------------------------------*!*/
+
+
+/*@media only screen and (orientation: portrait)  {*/
+    /*!* For mobile phones: *!*/
+    /*!*[id*="item-"]  img {*!*/
+        /*!*border-radius: 1em;*!*/
+        /*!*!*width: 12em;*!*!*/
+        /*!*!*height: 10em*!*!*/
+
+        /*!*!*float: right;*!*!*/
+        /*!*width: 100%;*!*/
+        /*!*height: 6em;*!*/
+    /*!*}*!*/
+
+    /*#bigImg img {*/
+        /*height: 38em;*/
+        /*width: 38em;*/
+        /*margin-top: 1.5em;*/
+        /*border-top-left-radius: 10em;*/
+        /*border-bottom-right-radius: 10em;*/
+        /*border-width: 1em;*/
+    /*}*/
+    /*#bigImg  {*/
+
+        /*width: 38em;*/
+
+    /*}*/
+
+    /*#bigImgX img{*/
+        /*padding-right: 5em;*/
+    /*}*/
+
+    /*#bigImgX img{*/
+        /*height: 4em;*/
+        /*width: 7em;*/
+        /*padding-top: 1.5em;*/
+        /*padding-right: 5em;*/
+        /*alignment: left;*/
+    /*}*/
+
+
+/*}*/
+
+

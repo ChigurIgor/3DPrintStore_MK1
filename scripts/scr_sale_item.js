@@ -170,7 +170,7 @@ var j=0;
 
             divRow.innerHTML ="                <div class=\"col-6\">\n" +
                 "                    <div id= \"ctlg_item-1\" class=\"row\">\n" +
-                "                    <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\">\n" +
+                "                    <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt='' onclick='showPicture("+index+","+cat+")'>\n" +
                 "                    </div>\n" +
                 "                </div>\n" +
                 "                <div class=\"col-6\">\n" +

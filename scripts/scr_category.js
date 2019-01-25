@@ -160,8 +160,8 @@ function mUnHover(id) {
     let divImg=div.getElementsByClassName("item_img")[0];
     let divTtl=div.getElementsByClassName("item_ttl")[0];
     let divPrice=div.getElementsByClassName("item_price")[0];
-    divImg.style.transform="scale(1)"
-    divTtl.style.textShadow=""
+    divImg.style.transform="scale(1)";
+    divTtl.style.textShadow="";
     divPrice.style.textShadow=""
 }
 
