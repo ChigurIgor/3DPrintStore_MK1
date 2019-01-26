@@ -74,6 +74,11 @@ function createItems(duce) {
     }
 
     itemsInside=duce.length;
+    if(itemsInside>itemsInLine){
+        document.body.style.overflow = 'visible';
+
+    }
+
     for(i=0; i<duce.length;i += itemsInLine) {
         // alert("i= "+i);
 
@@ -104,8 +109,8 @@ var j=0;
             var price = duce[index].price;
             // alert("index= "+index);
             var div = document.createElement('div');
-            div.className=clsType;
-            div.id="item-"+id;
+            div.className=clsType+" ctlg_item_col";
+            // div.id="item-"+id;
 
 
             div.innerHTML =
@@ -146,9 +151,10 @@ function mHover(id) {
     let divImg=div.getElementsByClassName("item_img")[0];
     let divTtl=div.getElementsByClassName("item_ttl")[0];
     let divPrice=div.getElementsByClassName("item_price")[0];
-        divImg.style.transform="scale(1.2)"
-    divTtl.style.textShadow="gray 1px 1px"
-    divPrice.style.textShadow="gray 1px 1px"
+        divImg.style.transform="scale(1.2)";
+    divTtl.style.textShadow="gray 1px 1px";
+    // divTtl.style.fontWeight="bold";
+    divPrice.style.textShadow="gray 1px 1px";
         // divImg.style.transform = "rotate(7deg)"
 
 }
@@ -199,6 +205,8 @@ $(document).ready(function(){
     divRowProgress.className="row";
     divRowProgress.id="divRowProgress";
     divRowProgress.innerHTML ="<p>Download...</p>";
+    document.body.style.overflow = 'hidden';
+
     container.appendChild(divRowProgress);
 
 
@@ -227,7 +235,6 @@ function getItemData(catId) {
         console.log(response);
         var duce = jQuery.parseJSON(response);
         divRowProgress.innerHTML ="<p>There are no products in this category yet, but they will be soon.</p>";
-
         if(duce.length>0){
             divRowProgress.remove();
 

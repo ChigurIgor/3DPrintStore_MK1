@@ -1,3 +1,9 @@
+#topMenuCont{
+    margin: 0;
+    padding: 0;
+}
+
+
 #topMenu{
     border-bottom-width: 1px ;
     border-bottom-style: solid ;
@@ -5,12 +11,14 @@
     cursor: pointer;
     height: 8vh;
     font-family: 'Carrois Gothic SC', sans-serif;
-
+    margin: 0;
+    padding: 0;
 }
 
 #top_menu{
     background: white;
     min-height: 8vh;
+
 }
 
 #top_menu a{
