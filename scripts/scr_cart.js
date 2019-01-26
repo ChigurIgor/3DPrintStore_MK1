@@ -354,8 +354,17 @@ function     createOrderForm(){
         "    <div id=\"ms-2\" class=\"row\"> <input type=\"text\" id=\"emailMsg\" name=\"Email\" placeholder=\"Email\"></div>\n" +
         "    <div id=\"ms-5\" class=\"row\"> <input type=\"text\" id=\"emailAdrs\" name=\"Address\" placeholder=\"Address\"></div>\n" +
         "    <div id=\"ms-4\" class=\"row\"> <textarea          id=\"txtMsg\"name=\"Message\" placeholder=\"Comment to the order\"></textarea></div>\n" +
+        "    <div  id=\"ms-1\" class=\"row\">" +
+
+        " <div id=\"msDeliv\" class=\"col-10 offset-1\">\n" +
+        "<p>Please read terms before you make order.</p>\n"+
+        "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
+        "                </div>\n"+
+
+        " </textarea></div>\n" +
+
         "<div id=\"btn_send\" class=\"row\" onclick=\"sendMsg()\">\n" +
-        "    <div class=\"col-12\">\n" +
+        "    <div class=\"col-4\">\n" +
         "    <p>Send</p>\n" +
         "    <!--<form id=\"contact_form\" method=\"post\" action=\"../PHP/send_email.php\">-->\n" +
         "\n" +
@@ -363,6 +372,10 @@ function     createOrderForm(){
         "    <!--</form>-->\n" +
         "\n" +
         "    </div>\n" +
+
+
+
+
         "    </div>\n" +
         "\n" +
         "    </div>\n";
