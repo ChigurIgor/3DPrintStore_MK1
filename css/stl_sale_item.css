@@ -35,7 +35,17 @@ color: red;
 
 .item_dscr{
     color: blue;
-    margin: 1em;
+    margin: 0 1em 0 1em;
+    font-size: 1.2em;
+}
+.item_mat{
+    color: blue;
+    margin: 0.5em 1em 0.5em 1em;
+    font-size: 1.2em;
+}
+.item_col{
+    color: blue;
+    margin: 0 1em 1em 1em;
     font-size: 1.2em;
 }
 
@@ -115,9 +125,10 @@ color: red;
     font-weight: bold;
     padding: 0 3vh 0 3vh;
     cursor: pointer;
-
-
 }
+
+
+
 #decrRow{
     /*border-color: gray;*/
     /*border-style: solid;*/

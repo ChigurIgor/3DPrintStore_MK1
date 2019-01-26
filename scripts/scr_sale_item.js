@@ -12,6 +12,8 @@ var descr="" ;
 var name="" ;
 var link="" ;
 var price="" ;
+var material="" ;
+var colour="" ;
 var divRowProgress;
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -65,6 +67,8 @@ function getItemData(itemId) {
              name = duce[0].name;
              link = duce[0].link;
              price = duce[0].price;
+             material = duce[0].material;
+             colour = duce[0].colour;
             // console.log(duce);
             console.log(id);
             console.log(cat);
@@ -72,10 +76,12 @@ function getItemData(itemId) {
             console.log(name);
             console.log(link);
             console.log(price);
+            console.log(material);
+            console.log(colour);
             divRowProgress.remove();
 
 
-            createItemsContent(id,cat,descr,name,link,price);
+            createItemsContent(id,cat,descr,name,link,price,material,colour);
         }
     });
 
@@ -125,7 +131,7 @@ function createItem(id,cat,descr,name,link,price) {
 
 
 
-function createItemsContent(id,cat,descr,name,link,price) {
+function createItemsContent(id,cat,descr,name,link,price,material,colour) {
     dir="categories/"+cat;
 
     i=0;
@@ -180,8 +186,14 @@ var j=0;
                 "                    <div class=\"row\">\n" +
                 "                        <p class=\"item_price\" >"+price+" ₪</p>\n" +
                 "                    </div>\n" +
-                "<div class=\"row\">\n" +
+                "                    <div class=\"row\">\n" +
                 "                        <p class=\"item_dscr\" >"+descr+"</p>\n" +
+                "                    </div>\n" +
+                "                    <div class=\"row\">\n" +
+                "                        <p class=\"item_mat\" >Material: "+material+"</p>\n" +
+                "                    </div>\n" +
+                "<div class=\"row\">\n" +
+                "                        <p class=\"item_col\" >Colour: "+colour+"</p>\n" +
                 "                    </div>\n" +
                 "                    <div class=\"row\">\n" +
                 "                        <div class=\"col-5\">\n" +
