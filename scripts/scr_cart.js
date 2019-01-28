@@ -88,29 +88,71 @@ function createItemsContent() {
     divRowItem.id="cart_item-"+id;
         divRowItem.innerHTML ="<p>"+itemsCount+" items in cart</p>";
 
-    divRowItem.innerHTML=" " +
-        " <div class=\"col-3\"><div id=\"item_img_cont-"+id+"\" class=\"row\" onclick=\"openItem(id)\"><img src=\"images/"+dir+"/"+link+".jpg\"  ></div> </div>\n" +
-        "            <div class=\"col-5\">\n" +
-        "                <div id=\"item_name_cont-"+id+"\" class=\"row\"><p>"+name+"</p></div>\n" +
-        "                <div id=\"item_desc_cont-"+id+"\" class=\"row\"><p>"+descr+"</p></div>\n" +
-        "            </div>\n" +
-        "            <div class=\"col-4\">\n" +
-        "                <div id=\"item_count_cont-"+id+"\" class=\"row\">\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price-"+id+"\">"+price+" ₪</p></div> </div>\n" +
-        "                    <div class=\"col-6\">\n" +
-        "                        <div class=\"row\">\n" +
-        "                            <div  id=\"decr-"+id+"\" class=\"col-3 offset-1\"><div id=\"decrRow-"+id+"\" class=\"row\" onclick='decreaseCount(id)'><p >-</p></div> </div>\n" +
-        "                            <div id=\"count-"+id+"\" class=\"col-4\"><div id=\"countRow-"+id+"\" class=\"row\"><input id=\"countInpt-"+id+"\" value=\""+count+"\"  onchange='inputCangedCount(id)' ></div> </div>\n" +
-        "                            <div id=\"add-"+id+"\" class=\"col-3\"><div id=\"addRow-"+id+"\" class=\"row\" onclick='increaseCount(id)'><p  >+</p></div> </div>\n" +
-        "                        </div>\n" +
-        "                    </div>\n" +
-        "\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price_full-"+id+"\">"+priceFull+" ₪</p></div> </div>\n" +
-        "                    <div class=\"col-2\"><div class=\"row\"><img src='images/support/icon_trash_red.png' alt='Delete' id=\"del-"+id+"\" onclick='deleteItemCart(id)'></div> </div>\n" +
-        "                </div>\n" +
-        "            </div>"
-    ;
+        if( navigator.userAgent.match(/Android/i)
+            || navigator.userAgent.match(/webOS/i)
+            || navigator.userAgent.match(/iPhone/i)
+            || navigator.userAgent.match(/iPad/i)
+            || navigator.userAgent.match(/iPod/i)
+            || navigator.userAgent.match(/BlackBerry/i)
+            || navigator.userAgent.match(/Windows Phone/i)) {
 
+            container.className="col-12";
+
+            divRowItem.innerHTML=" " +
+
+
+                " <div class=\"col-6 \">" +
+                "                <div id=\"item_name_cont-"+id+"\" class=\"row\"><p>"+name+"</p></div>\n" +
+
+                "<div id=\"item_img_cont-"+id+"\" class=\"row\" onclick=\"openItem(id)\"><img src=\"images/"+dir+"/"+link+".jpg\"  ></div> " +
+
+
+                // "                <div id=\"item_desc_cont-"+id+"\" class=\"row\"><p>"+descr+"</p></div>\n" +
+                "</div>\n" +
+                "            <div class=\"col-4 offset-2\">\n" +
+                "                <div id=\"item_count_cont-"+id+"\" class=\"row\">\n" +
+                "                  <div class=\"row\"><p id=\"price-"+id+"\">"+price+" ₪</p></div>\n" +
+
+                "                            <div id=\"decrRow-" + id + "\" class=\"row\" onclick='decreaseCount(id)'><img src=\"./images/support/icon_decrease.png\"> </div>\n" +
+                "                           <div id=\"countRow-" + id + "\" class=\"row\"><input id=\"countInpt-" + id + "\" value=\"" + count + "\"  onchange='inputCangedCount(id)' ></div>\n" +
+                "                            <div id=\"addRow-" + id + "\" class=\"row\" onclick='increaseCount(id)'><img src=\"./images/support/icon_increase.png\"> </div>\n" +
+                "\n" +
+                "                    <div class=\"row\"><p id=\"price_full-"+id+"\">"+priceFull+" ₪</p> </div>\n" +
+                "                    <div class=\"row\"><img src='images/support/icon_trash_red.png' alt='Delete' id=\"del-"+id+"\" onclick='deleteItemCart(id)'> </div>\n" +
+                "                </div>\n" +
+
+
+                "            </div>"
+            ;
+
+
+        }
+        else {
+
+
+            divRowItem.innerHTML = " " +
+                " <div class=\"col-3\"><div id=\"item_img_cont-" + id + "\" class=\"row\" onclick=\"openItem(id)\"><img src=\"images/" + dir + "/" + link + ".jpg\"  ></div> </div>\n" +
+                "            <div class=\"col-5\">\n" +
+                "                <div id=\"item_name_cont-" + id + "\" class=\"row\"><p>" + name + "</p></div>\n" +
+                "                <div id=\"item_desc_cont-" + id + "\" class=\"row\"><p>" + descr + "</p></div>\n" +
+                "            </div>\n" +
+                "            <div class=\"col-4\">\n" +
+                "                <div id=\"item_count_cont-" + id + "\" class=\"row\">\n" +
+                "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price-" + id + "\">" + price + " ₪</p></div> </div>\n" +
+                "                    <div class=\"col-6\">\n" +
+                "                        <div class=\"row\">\n" +
+                "                            <div  id=\"decr-" + id + "\" class=\"col-3 offset-1\"><div id=\"decrRow-" + id + "\" class=\"row\" onclick='decreaseCount(id)'><img src=\"./images/support/icon_decrease.png\"></div> </div>\n" +
+                "                            <div id=\"count-" + id + "\" class=\"col-4\"><div id=\"countRow-" + id + "\" class=\"row\"><input id=\"countInpt-" + id + "\" value=\"" + count + "\"  onchange='inputCangedCount(id)' ></div> </div>\n" +
+                "                            <div id=\"add-" + id + "\" class=\"col-3\"><div id=\"addRow-" + id + "\" class=\"row\" onclick='increaseCount(id)'><img src=\"./images/support/icon_increase.png\"></div> </div>\n" +
+                "                        </div>\n" +
+                "                    </div>\n" +
+                "\n" +
+                "                    <div class=\"col-2\"><div class=\"row\"><p id=\"price_full-" + id + "\">" + priceFull + " ₪</p></div> </div>\n" +
+                "                    <div class=\"col-2\"><div class=\"row\"><img src='images/support/icon_trash_red.png' alt='Delete' id=\"del-" + id + "\" onclick='deleteItemCart(id)'></div> </div>\n" +
+                "                </div>\n" +
+                "            </div>"
+            ;
+        }
 
         container.appendChild(divRowItem);
 
@@ -348,37 +390,82 @@ function     createOrderForm(){
     divRowOrder.className="row";
     divRowOrder.id="orderForm";
 
-    divRowOrder.innerHTML="<div id=\"right_col\" class=\"col-5\">\n" +
-        "    <div id=\"ms-3\" class=\"row\"> <input type=\"text\" id=\"phoneMsg\"name=\"Telephone\" placeholder=\"Telephone\"></div>\n" +
-        "    <div id=\"ms-1\" class=\"row\"> <input type=\"text\" id=\"nameMsg\" name=\"FirstName\" placeholder=\"Name\"></div>\n" +
-        "    <div id=\"ms-2\" class=\"row\"> <input type=\"text\" id=\"emailMsg\" name=\"Email\" placeholder=\"Email\"></div>\n" +
-        "    <div id=\"ms-5\" class=\"row\"> <input type=\"text\" id=\"emailAdrs\" name=\"Address\" placeholder=\"Address\"></div>\n" +
-        "    <div id=\"ms-4\" class=\"row\"> <textarea          id=\"txtMsg\"name=\"Message\" placeholder=\"Comment to the order\"></textarea></div>\n" +
-        "    <div  id=\"ms-1\" class=\"row\">" +
+    if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)){
+        divRowOrder.innerHTML =
+            "<div id=\"right_col\" class=\"col-5\">\n" +
+            "    <div id=\"ms-3\" class=\"row\"> <input type=\"text\" id=\"phoneMsg\"name=\"Telephone\" placeholder=\"Telephone\"></div>\n" +
+            "    <div id=\"ms-1\" class=\"row\"> <input type=\"text\" id=\"nameMsg\" name=\"FirstName\" placeholder=\"Name\"></div>\n" +
+            "    <div id=\"ms-2\" class=\"row\"> <input type=\"text\" id=\"emailMsg\" name=\"Email\" placeholder=\"Email\"></div>\n" +
+            "    <div id=\"ms-5\" class=\"row\"> <input type=\"text\" id=\"emailAdrs\" name=\"Address\" placeholder=\"Address\"></div>\n" +
+            "    <div id=\"ms-4\" class=\"row\"> <textarea          id=\"txtMsg\"name=\"Message\" placeholder=\"Comment to the order\"></textarea></div>\n" +
+            "    <div  id=\"ms-1\" class=\"row\">" +
 
-        " <div id=\"msDeliv\" class=\"col-10 offset-1\">\n" +
-        "<p>Please read terms before you make order.</p>\n"+
-        "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
-        "                </div>\n"+
+            " <div id=\"msDeliv\" class=\"col-10 offset-1\">\n" +
+            "<p>Please read terms before you make order.</p>\n" +
+            "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
+            "                </div>\n" +
 
-        " </textarea></div>\n" +
+            " </textarea></div>\n" +
 
-        "<div id=\"btn_send\" class=\"row\" onclick=\"sendMsg()\">\n" +
-        "    <div class=\"col-4\">\n" +
-        "    <p>Send</p>\n" +
-        "    <!--<form id=\"contact_form\" method=\"post\" action=\"../PHP/send_email.php\">-->\n" +
-        "\n" +
-        "    <!--<input type=\"submit\" class=\"form_control submit\" value=\"Send message\">-->\n" +
-        "    <!--</form>-->\n" +
-        "\n" +
-        "    </div>\n" +
-
-
+            "<div id=\"btn_send\" class=\"row\" onclick=\"sendMsg()\">\n" +
+            "    <div class=\"col-4\">\n" +
+            "    <p>Send</p>\n" +
+            "    <!--<form id=\"contact_form\" method=\"post\" action=\"../PHP/send_email.php\">-->\n" +
+            "\n" +
+            "    <!--<input type=\"submit\" class=\"form_control submit\" value=\"Send message\">-->\n" +
+            "    <!--</form>-->\n" +
+            "\n" +
+            "    </div>\n" +
 
 
-        "    </div>\n" +
-        "\n" +
-        "    </div>\n";
+            "    </div>\n" +
+            "\n" +
+            "    </div>\n"
+        ;
+
+
+    }
+    else {
+
+
+        divRowOrder.innerHTML =
+            "<div id=\"right_col\" class=\"col-5\">\n" +
+            "    <div id=\"ms-3\" class=\"row\"> <input type=\"text\" id=\"phoneMsg\"name=\"Telephone\" placeholder=\"Telephone\"></div>\n" +
+            "    <div id=\"ms-1\" class=\"row\"> <input type=\"text\" id=\"nameMsg\" name=\"FirstName\" placeholder=\"Name\"></div>\n" +
+            "    <div id=\"ms-2\" class=\"row\"> <input type=\"text\" id=\"emailMsg\" name=\"Email\" placeholder=\"Email\"></div>\n" +
+            "    <div id=\"ms-5\" class=\"row\"> <input type=\"text\" id=\"emailAdrs\" name=\"Address\" placeholder=\"Address\"></div>\n" +
+            "    <div id=\"ms-4\" class=\"row\"> <textarea          id=\"txtMsg\"name=\"Message\" placeholder=\"Comment to the order\"></textarea></div>\n" +
+            "    <div  id=\"ms-1\" class=\"row\">" +
+
+            " <div id=\"msDeliv\" class=\"col-10 offset-1\">\n" +
+            "<p>Please read terms before you make order.</p>\n" +
+            "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
+            "                </div>\n" +
+
+            " </textarea></div>\n" +
+
+            "<div id=\"btn_send\" class=\"row\" onclick=\"sendMsg()\">\n" +
+            "    <div class=\"col-4\">\n" +
+            "    <p>Send</p>\n" +
+            "    <!--<form id=\"contact_form\" method=\"post\" action=\"../PHP/send_email.php\">-->\n" +
+            "\n" +
+            "    <!--<input type=\"submit\" class=\"form_control submit\" value=\"Send message\">-->\n" +
+            "    <!--</form>-->\n" +
+            "\n" +
+            "    </div>\n" +
+
+
+            "    </div>\n" +
+            "\n" +
+            "    </div>\n";
+
+    }
     container.appendChild(divRowOrder);
 
 }

@@ -13,13 +13,13 @@ function createFooter(page) {
         || navigator.userAgent.match(/Windows Phone/i)){
 
         div.innerHTML =
-            "<div class='col-6' id='cont-1'><p>Tel: 054 904 2727</p></div>"
+            "<div class='col-5' id='cont-1'><p>Tel: 054 904 2727</p></div>"
             +
-            "<div class='col-4' id='cont-2'><a href='#'><img src='./images/support/icon_facebook.png'></a></div>"
-            // +
-            // " <div id=\"mDeliv\" class=\"col-4\">\n" +
-            // "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
-            // "                </div>\n"
+            "<div class='col-2' id='cont-2'><a href='#'><img src='./images/support/icon_facebook.png'></a></div>"
+            +
+            " <div id=\"mDeliv\" class=\"col-5\">\n" +
+            "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
+            "                </div>\n"
 
         ;
 

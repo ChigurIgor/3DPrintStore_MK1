@@ -47,7 +47,8 @@
     transform: scale(1.2);
 }
 #mCart img:active{
-transform: translateY(1em)}
+     transform: translateY(1em)
+ }
 
 #mCart p{
     /*padding-top: 5vh;*/
@@ -92,5 +93,9 @@ transform: translateY(1em)}
         height: 7vh;
         width: 7vh;
 
+    }
+
+    #mCart img:active{
+        transform: translateY(0.2vh)
     }
 }
