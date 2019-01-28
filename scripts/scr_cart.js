@@ -111,15 +111,38 @@ function createItemsContent() {
                 "</div>\n" +
                 "            <div class=\"col-4 offset-2\">\n" +
                 "                <div id=\"item_count_cont-"+id+"\" class=\"row\">\n" +
-                "                  <div class=\"row\"><p id=\"price-"+id+"\">"+price+" ₪</p></div>\n" +
 
+                "                  <div class=\"row\">" +
+                "<div class='col-6'>" +
+
+                "<p id=\"price-"+id+"\">"+price+" ₪</p>" +
+                " </div>"+
+                "<div class='col-4 offset-1'>" +
                 "                            <div id=\"decrRow-" + id + "\" class=\"row\" onclick='decreaseCount(id)'><img src=\"./images/support/icon_decrease.png\"> </div>\n" +
+
+                " </div>"+
+                "</div>\n" +
+
                 "                           <div id=\"countRow-" + id + "\" class=\"row\"><input id=\"countInpt-" + id + "\" value=\"" + count + "\"  onchange='inputCangedCount(id)' ></div>\n" +
+
+
+
+
+
+
+                "                  <div class=\"row\">" +
+                "<div class='col-6'>" +
+                "                    <p id=\"price_full-"+id+"\">"+priceFull+" ₪</p> \n" +
+
+                " </div>"+
+                "<div class='col-4 offset-1'>" +
+
                 "                            <div id=\"addRow-" + id + "\" class=\"row\" onclick='increaseCount(id)'><img src=\"./images/support/icon_increase.png\"> </div>\n" +
+                " </div>"+
                 "\n" +
-                "                    <div class=\"row\"><p id=\"price_full-"+id+"\">"+priceFull+" ₪</p> </div>\n" +
-                "                    <div class=\"row\"><img src='images/support/icon_trash_red.png' alt='Delete' id=\"del-"+id+"\" onclick='deleteItemCart(id)'> </div>\n" +
                 "                </div>\n" +
+
+                "                    <div class=\"row\"><img src='images/support/icon_trash_red.png' alt='Delete' id=\"del-"+id+"\" onclick='deleteItemCart(id)'> </div>\n" +
 
 
                 "            </div>"
