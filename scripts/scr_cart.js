@@ -421,7 +421,7 @@ function     createOrderForm(){
         || navigator.userAgent.match(/BlackBerry/i)
         || navigator.userAgent.match(/Windows Phone/i)){
         divRowOrder.innerHTML =
-            "<div id=\"right_col\" class=\"col-5\">\n" +
+            "<div id=\"right_col\" class=\"col-10 offset-1\">\n" +
             "    <div id=\"ms-3\" class=\"row\"> <input type=\"text\" id=\"phoneMsg\"name=\"Telephone\" placeholder=\"Telephone\"></div>\n" +
             "    <div id=\"ms-1\" class=\"row\"> <input type=\"text\" id=\"nameMsg\" name=\"FirstName\" placeholder=\"Name\"></div>\n" +
             "    <div id=\"ms-2\" class=\"row\"> <input type=\"text\" id=\"emailMsg\" name=\"Email\" placeholder=\"Email\"></div>\n" +
