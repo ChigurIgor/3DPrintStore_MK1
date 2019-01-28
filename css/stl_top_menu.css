@@ -73,3 +73,26 @@
 
 
 }
+
+
+/*--------------------------------------------------------------------- For mobile phones:  ---------------------------------------------------*/
+
+
+@media only screen and (orientation: portrait)  {
+
+    #topMenuCont{
+        /*margin: 0;*/
+        padding: 0;
+        height: 0;
+    }
+    #topMenu{
+        border-bottom-width:0;
+        border-bottom-color: transparent;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+}

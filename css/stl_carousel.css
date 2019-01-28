@@ -39,3 +39,17 @@
     color: white;
     text-shadow: #666666 1px 1px;
 }
+
+/*--------------------------------------------------------------------- For mobile phones:  ---------------------------------------------------*/
+
+
+@media only screen and (orientation: portrait)  {
+
+    #carousel{
+        height: 0;
+        padding: 0;
+    }
+
+}
+
+

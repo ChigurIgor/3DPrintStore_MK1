@@ -61,3 +61,35 @@
     /*border-color: whitesmoke;*/
     padding: 0.5em;
 }
+
+/*--------------------------------------------------------------------- For mobile phones:  ---------------------------------------------------*/
+
+
+@media only screen and (orientation: portrait)  {
+
+    #catalog{
+        margin-bottom: 0em;
+        margin-top: 0;
+    }
+
+    [id*="ctlg_item-"] p{
+        position: absolute;
+        bottom: 0;
+        alignment: center;
+        z-index: 2;
+        margin-left: 2em;
+        font-size: 0.7em;
+        /*color: whitesmoke;*/
+        /*text-shadow: gray 1px 1px;*/
+        color: white;
+        background-color: rgba(0, 0, 0, 0.4);
+        border-radius: 0.5em;
+        /*border-radius: 0.5em;*/
+        /*border-style:groove;*/
+        /*border-width: 1px;*/
+        /*border-color: whitesmoke;*/
+        padding: 0.5em;
+    }
+
+
+}

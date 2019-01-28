@@ -2,6 +2,22 @@ function createTopMenu() {
 
     var div = document.createElement('div');
 
+    if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)){
+
+        div.innerHTML =
+            ""
+        ;
+
+
+    }
+    else {
+
 
         div.innerHTML = "            <div class=\"row\">\n" +
             "                <div  class=\"col-10 offset-1\" >\n" +
@@ -12,7 +28,7 @@ function createTopMenu() {
             "                            <!--<p>Xiaomi Mijia 365 parts</p>-->\n" +
             "</div>\n" +
 
-    "                        </div>\n" +
+            "                        </div>\n" +
             "                        <div id=\"tm_item-1\" class=\"col-2\" onclick='openCategory(id)'>\n" +
             "<div class='row'>\n" +
             "                            <p>Keychains</p>\n" +
@@ -48,10 +64,10 @@ function createTopMenu() {
             "                </div>\n" +
             "            </div>\n";
 
+        topMenu.appendChild(div);
 
+    }
 
-
-    topMenu.appendChild(div);
 
 
 
