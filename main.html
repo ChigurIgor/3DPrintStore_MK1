@@ -32,6 +32,7 @@
     <script src="scripts/scr_create_top_menu.js"></script>
     <script src="scripts/scr_create_footer.js"></script>
     <script src="scripts/scr_scrollbtn.js"></script>
+    <script src="scripts/scr_create_carusel.js"></script>
 
 
 
@@ -56,99 +57,99 @@
     <div class="row">
         <div id="carousel" class="col-12" >
 
-            <div class="w3-content">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel" style="position:relative;z-index:1;">
-                    <!-- Indicators -->
-                    <ol class="carousel-indicators" style="z-index:1 !important">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1" class=""></li>
-                        <li data-target="#myCarousel" data-slide-to="2" class=""></li>
-                        <li data-target="#myCarousel" data-slide-to="3" class=""></li>
-                        <li data-target="#myCarousel" data-slide-to="4" class=""></li>
-                        <li data-target="#myCarousel" data-slide-to="5" class=""></li>
-                        <li data-target="#myCarousel" data-slide-to="6" class=""></li>
-                        <li data-target="#myCarousel" data-slide-to="7" class=""></li>
-                    </ol>
+            <!--<div class="w3-content">-->
+                <!--<div id="myCarousel" class="carousel slide" data-ride="carousel" style="position:relative;z-index:1;">-->
+                    <!--&lt;!&ndash; Indicators &ndash;&gt;-->
+                    <!--<ol class="carousel-indicators" style="z-index:1 !important">-->
+                        <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+                        <!--<li data-target="#myCarousel" data-slide-to="1" class=""></li>-->
+                        <!--<li data-target="#myCarousel" data-slide-to="2" class=""></li>-->
+                        <!--<li data-target="#myCarousel" data-slide-to="3" class=""></li>-->
+                        <!--<li data-target="#myCarousel" data-slide-to="4" class=""></li>-->
+                        <!--<li data-target="#myCarousel" data-slide-to="5" class=""></li>-->
+                        <!--<li data-target="#myCarousel" data-slide-to="6" class=""></li>-->
+                        <!--<li data-target="#myCarousel" data-slide-to="7" class=""></li>-->
+                    <!--</ol>-->
 
-                    <!-- Wrapper for slides -->
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active" id="car_item-0" onclick="openCategory(id)">
-                            <img src="images/carousel_pg1/1.jpg" alt="Los Angeles" style="height: 25em; ">
-                            <div class="carousel-caption">
-                                <h3>Xiaomi Mijia M365 Spare Parts</h3>
-                                <p>Very much spare parts for Xiaomi Mijia M365 scooter.</p>
-                            </div>
-                        </div>
+                    <!--&lt;!&ndash; Wrapper for slides &ndash;&gt;-->
+                    <!--<div class="carousel-inner" role="listbox">-->
+                        <!--<div class="item active" id="car_item-0" onclick="openCategory(id)">-->
+                            <!--<img src="images/carousel_pg1/1.jpg" alt="Los Angeles" style="height: 25em; ">-->
+                            <!--<div class="carousel-caption">-->
+                                <!--<h3>Xiaomi Mijia M365 Spare Parts</h3>-->
+                                <!--<p>Very much spare parts for Xiaomi Mijia M365 scooter.</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <div class="item" id="car_item-1" onclick="openCategory(id)">
-                            <img src="images/carousel_pg1/2.jpg" alt="Chicago" style="height: 25em" >
-                            <div class="carousel-caption">
-                                <h3>Keychains</h3>
-                                <p>Great keychains.</p>
-                            </div>
-                        </div>
+                        <!--<div class="item" id="car_item-1" onclick="openCategory(id)">-->
+                            <!--<img src="images/carousel_pg1/2.jpg" alt="Chicago" style="height: 25em" >-->
+                            <!--<div class="carousel-caption">-->
+                                <!--<h3>Keychains</h3>-->
+                                <!--<p>Great keychains.</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <div class="item" id="car_item-2" onclick="openCategory(id)">
-                            <img src="images/carousel_pg1/3.jpg" alt="New York" style="height: 25em">
-                            <div class="carousel-caption">
-                                <h3>GoPro</h3>
-                                <p>GoPro parts and accessories</p>
-                            </div>
-                        </div>
+                        <!--<div class="item" id="car_item-2" onclick="openCategory(id)">-->
+                            <!--<img src="images/carousel_pg1/3.jpg" alt="New York" style="height: 25em">-->
+                            <!--<div class="carousel-caption">-->
+                                <!--<h3>GoPro</h3>-->
+                                <!--<p>GoPro parts and accessories</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <div class="item" id="car_item-5" onclick="openCategory(id)">
-                            <img src="images/carousel_pg1/4.jpg" alt="New York" style="height: 25em">
-                            <div class="carousel-caption">
-                                <h3>Phone Holders</h3>
-                                <p>Supports for the phone that will not leave anyone indifferent. </p>
-                            </div>
-                        </div>
+                        <!--<div class="item" id="car_item-5" onclick="openCategory(id)">-->
+                            <!--<img src="images/carousel_pg1/4.jpg" alt="New York" style="height: 25em">-->
+                            <!--<div class="carousel-caption">-->
+                                <!--<h3>Phone Holders</h3>-->
+                                <!--<p>Supports for the phone that will not leave anyone indifferent. </p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <div class="item" id="car_item-6" onclick="openCategory(id)">
-                            <img src="images/carousel_pg1/5.jpg" alt="New York" style="height: 25em">
-                            <div class="carousel-caption">
-                                <h3>Pen Stands</h3>
-                                <p>Unique stand for pens</p>
-                            </div>
-                        </div>
+                        <!--<div class="item" id="car_item-6" onclick="openCategory(id)">-->
+                            <!--<img src="images/carousel_pg1/5.jpg" alt="New York" style="height: 25em">-->
+                            <!--<div class="carousel-caption">-->
+                                <!--<h3>Pen Stands</h3>-->
+                                <!--<p>Unique stand for pens</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <div class="item" id="car_item-7" onclick="openCategory(id)">
-                            <img src="images/carousel_pg1/6.jpg" alt="New York" style="height: 25em">
-                            <div class="carousel-caption">
-                                <h3>Business Card Holder</h3>
-                                <p>Unique holders for your business cards.</p>
-                            </div>
-                        </div>
+                        <!--<div class="item" id="car_item-7" onclick="openCategory(id)">-->
+                            <!--<img src="images/carousel_pg1/6.jpg" alt="New York" style="height: 25em">-->
+                            <!--<div class="carousel-caption">-->
+                                <!--<h3>Business Card Holder</h3>-->
+                                <!--<p>Unique holders for your business cards.</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <div class="item" id="car_item-4" onclick="openCategory(id)">
-                            <img src="images/carousel_pg1/7.jpg" alt="New York" style="height: 25em">
-                            <div class="carousel-caption">
-                                <h3>Rings and Accessories</h3>
-                                <p>Some rings and imitation jewelry that can be made for you.</p>
-                            </div>
-                        </div>
+                        <!--<div class="item" id="car_item-4" onclick="openCategory(id)">-->
+                            <!--<img src="images/carousel_pg1/7.jpg" alt="New York" style="height: 25em">-->
+                            <!--<div class="carousel-caption">-->
+                                <!--<h3>Rings and Accessories</h3>-->
+                                <!--<p>Some rings and imitation jewelry that can be made for you.</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        <div class="item" id="car_item-12" onclick="openCategory(id)">
-                            <img src="images/carousel_pg1/8.jpg" alt="New York" style="height: 25em">
-                            <div class="carousel-caption">
-                                <h3>Useful Staff</h3>
-                                <p>Some useful stuff you may need.</p>
-                            </div>
-                        </div>
+                        <!--<div class="item" id="car_item-12" onclick="openCategory(id)">-->
+                            <!--<img src="images/carousel_pg1/8.jpg" alt="New York" style="height: 25em">-->
+                            <!--<div class="carousel-caption">-->
+                                <!--<h3>Useful Staff</h3>-->
+                                <!--<p>Some useful stuff you may need.</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                    </div>
+                    <!--</div>-->
 
-                    <!-- Controls -->
-                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div>
+                    <!--&lt;!&ndash; Controls &ndash;&gt;-->
+                    <!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">-->
+                        <!--<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Previous</span>-->
+                    <!--</a>-->
+                    <!--<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">-->
+                        <!--<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>-->
+                        <!--<span class="sr-only">Next</span>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
 
 
 
@@ -269,6 +270,7 @@
 <script>
     createHeader();
     createTopMenu();
+    createCarusel();
     createFooter();
 </script>
 
