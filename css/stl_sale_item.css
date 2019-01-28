@@ -157,6 +157,9 @@ color: red;
 
 @media only screen and (orientation: portrait)  {
 
+    #container{
+        min-height: 80vh;
+    }
 
     [id*="ctlg_item-"] img{
         height: 25vh;
