@@ -170,66 +170,126 @@ function createItemsContent(id,cat,descr,name,link,price,material,colour) {
 var j=0;
         var index=link;
 
+    if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+
+
+        divRow.innerHTML = "                <div class=\"col-6\">\n" +
+            "                    <div id= \"ctlg_item-1\" class=\"row\">\n" +
+            "                    <img class=\"item_img\" src=\"images/" + dir + "/" + index + ".jpg\" alt='' onclick='showPicture(" + index + "," + cat + ")'>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "                <div class=\"col-6\">\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <p class=\"item_ttl\">" + name + "</p>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <p class=\"item_price\" >" + price + " ₪</p>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <p class=\"item_dscr\" >" + descr + "</p>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <p class=\"item_mat\" >Material: " + material + "</p>\n" +
+            "                    </div>\n" +
+            "<div class=\"row\">\n" +
+            "                        <p class=\"item_col\" >Colour: " + colour + "</p>\n" +
+            "                    </div>\n" +
+            "                    </div>\n" +
+
+            "                    <div class=\"row\">\n" +
+            "                        <div class=\"col-10 offset-1\">\n" +
+            "                            <div class=\"row\">\n" +
+            "                                <div id=\"decr\" class=\"col-2\"><div class=\"row\"><div id=\"decrRow\" onclick='decreaseCount()'><img class=\"btn_cart\" src=\"images/support/icon_decrease.png\" alt=\"decrease\" ></div> </div></div>\n" +
+            "                                <div id=\"count\" class=\"col-2\"><div class=\"row\"><div id=\"countRow\"><input id=\"countInpt\" type=\"text\" size=\"40\" value='1'></div> </div></div>\n" +
+            "                                <div id=\"add\" class=\"col-2\"><div class=\"row\"><div id=\"addRow\" onclick='increaseCount()'><img class=\"btn_cart\" src=\"images/support/icon_increase.png\" alt=\"increase\" ></div> </div></div>\n" +
+
+            "<div class=\"col-2 offset-1\">\n" +
+        "                            <div class=\"row\"><img class=\"btn_cart\" src=\"images/support/icon_cart_add.png\" alt=\"Add to cart\" onclick='addToCart()'></div>\n" +
+        "                        </div>\n" +
+
+            "                       </div>\n" +
+            "                        </div>\n" +
+            "\n" +
+
+            "                        <!--<p \">Add to cart</p>-->\n" +
+            "\n" +
+            "                </div>";
+
+        // div.innerHTML =
+        //               "                                    <div class=\"row\" id=\"ctlg_item-"+index+"\"  onclick=\"openNews(id)\">\n" +
+        //               "                                        <div class=\"col-12\"> " +
+        //               "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt=\"sdf\"></div>\n" +
+        //               "<div class='row'> <p class=\"item_ttl\">"+titles[index]+"</p></div>" +
+        //               "<div class='row'> <p class=\"item_price\">"+prices[index]+"</p></div>" +
+        // "                            </div>";
+
+
+        // divRow.appendChild(div);
 
 
 
-
-            divRow.innerHTML ="                <div class=\"col-6\">\n" +
-                "                    <div id= \"ctlg_item-1\" class=\"row\">\n" +
-                "                    <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt='' onclick='showPicture("+index+","+cat+")'>\n" +
-                "                    </div>\n" +
-                "                </div>\n" +
-                "                <div class=\"col-6\">\n" +
-                "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_ttl\">"+name+"</p>\n" +
-                "                    </div>\n" +
-                "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_price\" >"+price+" ₪</p>\n" +
-                "                    </div>\n" +
-                "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_dscr\" >"+descr+"</p>\n" +
-                "                    </div>\n" +
-                "                    <div class=\"row\">\n" +
-                "                        <p class=\"item_mat\" >Material: "+material+"</p>\n" +
-                "                    </div>\n" +
-                "<div class=\"row\">\n" +
-                "                        <p class=\"item_col\" >Colour: "+colour+"</p>\n" +
-                "                    </div>\n" +
-                "                    <div class=\"row\">\n" +
-                "                        <div class=\"col-5\">\n" +
-                "                            <div class=\"row\">\n" +
-                "                                <div id=\"decr\" class=\"col-4\"><div class=\"row\"><div id=\"decrRow\" onclick='decreaseCount()'><img class=\"btn_cart\" src=\"images/support/icon_decrease.png\" alt=\"decrease\" ></div> </div></div>\n" +
-                "                                <div id=\"count\" class=\"col-4\"><div class=\"row\"><div id=\"countRow\"><input id=\"countInpt\" type=\"text\" size=\"40\" value='1'></div> </div></div>\n" +
-                "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\" onclick='increaseCount()'><img class=\"btn_cart\" src=\"images/support/icon_increase.png\" alt=\"increase\" ></div> </div></div>\n" +
-
-                "                            </div>\n" +
-                "                        </div>\n" +
-                "\n" +
-                "                        <div class=\"col-6 offset-1\">\n" +
-                "                            <div class=\"row\"><img class=\"btn_cart\" src=\"images/support/icon_cart_add.png\" alt=\"Add to cart\" onclick='addToCart()'></div>\n" +
-                "                        </div>\n" +
-                "                        <!--<p \">Add to cart</p>-->\n" +
-                "                    </div>\n" +
-                "\n" +
-                "                </div>";
-
-  // div.innerHTML =
-  //               "                                    <div class=\"row\" id=\"ctlg_item-"+index+"\"  onclick=\"openNews(id)\">\n" +
-  //               "                                        <div class=\"col-12\"> " +
-  //               "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt=\"sdf\"></div>\n" +
-  //               "<div class='row'> <p class=\"item_ttl\">"+titles[index]+"</p></div>" +
-  //               "<div class='row'> <p class=\"item_price\">"+prices[index]+"</p></div>" +
-  // "                            </div>";
+        container.className="col-12";
+    } else {
 
 
+        divRow.innerHTML = "                <div class=\"col-6\">\n" +
+            "                    <div id= \"ctlg_item-1\" class=\"row\">\n" +
+            "                    <img class=\"item_img\" src=\"images/" + dir + "/" + index + ".jpg\" alt='' onclick='showPicture(" + index + "," + cat + ")'>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "                <div class=\"col-6\">\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <p class=\"item_ttl\">" + name + "</p>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <p class=\"item_price\" >" + price + " ₪</p>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <p class=\"item_dscr\" >" + descr + "</p>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <p class=\"item_mat\" >Material: " + material + "</p>\n" +
+            "                    </div>\n" +
+            "<div class=\"row\">\n" +
+            "                        <p class=\"item_col\" >Colour: " + colour + "</p>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"row\">\n" +
+            "                        <div class=\"col-5\">\n" +
+            "                            <div class=\"row\">\n" +
+            "                                <div id=\"decr\" class=\"col-4\"><div class=\"row\"><div id=\"decrRow\" onclick='decreaseCount()'><img class=\"btn_cart\" src=\"images/support/icon_decrease.png\" alt=\"decrease\" ></div> </div></div>\n" +
+            "                                <div id=\"count\" class=\"col-4\"><div class=\"row\"><div id=\"countRow\"><input id=\"countInpt\" type=\"text\" size=\"40\" value='1'></div> </div></div>\n" +
+            "                                <div id=\"add\" class=\"col-4\"><div class=\"row\"><div id=\"addRow\" onclick='increaseCount()'><img class=\"btn_cart\" src=\"images/support/icon_increase.png\" alt=\"increase\" ></div> </div></div>\n" +
 
-            // divRow.appendChild(div);
+            "                            </div>\n" +
+            "                        </div>\n" +
+            "\n" +
+            "                        <div class=\"col-6 offset-1\">\n" +
+            "                            <div class=\"row\"><img class=\"btn_cart\" src=\"images/support/icon_cart_add.png\" alt=\"Add to cart\" onclick='addToCart()'></div>\n" +
+            "                        </div>\n" +
+            "                        <!--<p \">Add to cart</p>-->\n" +
+            "                    </div>\n" +
+            "\n" +
+            "                </div>";
+
+        // div.innerHTML =
+        //               "                                    <div class=\"row\" id=\"ctlg_item-"+index+"\"  onclick=\"openNews(id)\">\n" +
+        //               "                                        <div class=\"col-12\"> " +
+        //               "<div class='row'> <img class=\"item_img\" src=\"images/"+dir+"/"+index+".jpg\" alt=\"sdf\"></div>\n" +
+        //               "<div class='row'> <p class=\"item_ttl\">"+titles[index]+"</p></div>" +
+        //               "<div class='row'> <p class=\"item_price\">"+prices[index]+"</p></div>" +
+        // "                            </div>";
 
 
+        // divRow.appendChild(div);
 
 
-
-
+    }
 
 
         container.appendChild(divRow);
