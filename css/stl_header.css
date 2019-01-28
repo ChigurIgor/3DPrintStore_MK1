@@ -21,7 +21,7 @@
      height: 15vh;
      width: 15vh;
      /*background: whitesmoke;*/
-    filter: invert(100%);
+    /*filter: invert(100%);*/
     transform: scale(0.9);
 
 
@@ -56,3 +56,15 @@ transform: translateY(1em)}
     /*color: red;*/
 }
 
+#mSlogan{
+    /*background-color: red;*/
+    margin: 0;
+    padding: 0;
+}
+
+#mSlogan .row{
+    margin: 0;
+    padding: 0;
+    /*background-color: #666666;*/
+    line-height: 13.5vh;
+}

@@ -8,11 +8,16 @@ function createHeader(page) {
             "                <div id=\"logo\" class=\"col-2 offset-1\">\n" +
             "                   <a href=\"main.html\"> <img src=\"images/support/icon_logo.png\"></a>\n" +
             "                </div>\n" +
-            "                <div class=\"col-3\">\n" +
-            "                    <a href=\"main.html\"> <h1>3DPrint Store</h1></a>\n" +
+            "                <div class=\"col-2\">\n" +
+            "                    <a href=\"main.html\"> <h1>3DPrintMan</h1></a>\n" +
             "                </div>\n" +
             "\n" +
-            "                <div id=\"mDeliv\" class=\"col-3\">\n" +
+            "                <div id=\"mSlogan\" class=\"col-3\">\n" +
+            "<div class='row'>" +
+            "                   <p>Too cool for traditional manufacturing</p>\n" +
+
+            "                </div>\n" +
+
             "                </div>\n" +
             "                <div id=\"mCart\" class=\"col-3\">\n" +
             "<div id=\"mCartRow\" class='row'>\n"+
