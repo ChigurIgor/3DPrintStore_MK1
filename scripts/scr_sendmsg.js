@@ -4,8 +4,9 @@ function sendMsg() {
     var phone = document.getElementById("phoneMsg").value;
     var txt = document.getElementById("txtMsg").value;
     var address = document.getElementById("emailAdrs").value;
+    var delTime = document.getElementById("emailDelTime").value;
 
-    if(name=="" || email==""|| phone==""|| address==""){
+    if(name=="" || email==""|| phone==""|| address==""|| delTime==""){
         alert("Some order registration field is empty");
         return;
     }
@@ -105,7 +106,7 @@ console.log(JSON.stringify(arr));
 
     var http = new XMLHttpRequest();
     var url = 'https://printstore.herokuapp.com/orderadd';
-    var params = 'email='+email+'&name='+name+'&phone='+phone+'&msgtxt='+txt+'&address='+address+'&cart='+obj+'&date='+todayDate+'&time='+todayTime;
+    var params = 'email='+email+'&name='+name+'&phone='+phone+'&msgtxt='+txt+'&address='+address+'&cart='+obj+'&date='+todayDate+'&time='+todayTime+'&delTime='+delTime;
     http.open('POST', url, true);
 
 //Send the proper header information along with the request

@@ -426,6 +426,8 @@ function     createOrderForm(){
             "    <div id=\"ms-1\" class=\"row\"> <input type=\"text\" id=\"nameMsg\" name=\"FirstName\" placeholder=\"Name\"></div>\n" +
             "    <div id=\"ms-2\" class=\"row\"> <input type=\"text\" id=\"emailMsg\" name=\"Email\" placeholder=\"Email\"></div>\n" +
             "    <div id=\"ms-5\" class=\"row\"> <input type=\"text\" id=\"emailAdrs\" name=\"Address\" placeholder=\"Address\"></div>\n" +
+            "    <div id=\"ms-6\" class=\"row\"> <input type=\"text\" id=\"emailDelTime\" name=\"Delivery\" placeholder=\"Delivery time and date\"></div>\n" +
+
             "    <div id=\"ms-4\" class=\"row\"> <textarea          id=\"txtMsg\"name=\"Message\" placeholder=\"Comment to the order\"></textarea></div>\n" +
             "    <div  id=\"ms-1\" class=\"row\">" +
 
@@ -463,6 +465,8 @@ function     createOrderForm(){
             "    <div id=\"ms-1\" class=\"row\"> <input type=\"text\" id=\"nameMsg\" name=\"FirstName\" placeholder=\"Name\"></div>\n" +
             "    <div id=\"ms-2\" class=\"row\"> <input type=\"text\" id=\"emailMsg\" name=\"Email\" placeholder=\"Email\"></div>\n" +
             "    <div id=\"ms-5\" class=\"row\"> <input type=\"text\" id=\"emailAdrs\" name=\"Address\" placeholder=\"Address\"></div>\n" +
+            "    <div id=\"ms-6\" class=\"row\"> <input type=\"text\" id=\"emailDelTime\" name=\"Delivery\" placeholder=\"Delivery time and date\"></div>\n" +
+
             "    <div id=\"ms-4\" class=\"row\"> <textarea          id=\"txtMsg\"name=\"Message\" placeholder=\"Comment to the order\"></textarea></div>\n" +
             "    <div  id=\"ms-1\" class=\"row\">" +
 
