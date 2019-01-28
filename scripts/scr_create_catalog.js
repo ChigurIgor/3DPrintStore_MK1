@@ -105,7 +105,7 @@ function createCatalog() {
             "            </div> "
         ;
 
-
+        catalog.className="col-12"
     }
     else {
 

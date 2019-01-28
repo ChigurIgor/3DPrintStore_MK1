@@ -47,7 +47,17 @@ function createItems(duce) {
 
         // createItem(id,cat,descr,name,link,price);
     }
+    if( navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
 
+        itemsInLine=2;
+        container.className="col-12";
+    }
 
 
     var clsType="col-6";
