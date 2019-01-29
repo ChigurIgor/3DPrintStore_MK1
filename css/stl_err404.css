@@ -1,0 +1,5 @@
+body{
+    background-image:url( "../images/err/0.jpg") ;
+    background-size: cover; /* Resize the background image to cover the entire container */
+    color: blue;
+}
