@@ -18,7 +18,8 @@
 }
 
 #logo img{
-     height: 15vh;
+    margin-top: 2vh;
+     height: 12vh;
      width: 15vh;
      /*background: whitesmoke;*/
     /*filter: invert(100%);*/
