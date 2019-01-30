@@ -13,9 +13,12 @@ function createFooter(page) {
         || navigator.userAgent.match(/Windows Phone/i)){
 
         div.innerHTML =
-            "<div class='col-5' id='cont-1'><p>Tel: 054 904 2727</p></div>"
+            "<div class='col-5' id='cont-1'>" +
+            "<p>Tel: 054 904 2727</p>" +
+            "<p>3dprint.str@gmail.com</p>" +
+            "</div>"
             +
-            "<div class='col-2' id='cont-2'><a href='#'><img src='./images/support/icon_facebook.png'></a></div>"
+            "<div class='col-2' id='cont-2'><a href='https://www.facebook.com/3DPrintman-458056418060551'><img src='./images/support/icon_facebook.png'></a></div>"
             +
             " <div id=\"mDeliv\" class=\"col-5\">\n" +
             "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
@@ -29,8 +32,13 @@ function createFooter(page) {
 
 
         div.innerHTML =
-            "<div class='col-2' id='cont-1'><p>Tel: 054 904 2727</p></div>" +
-            "<div class='col-4' id='cont-2'><a href='#'><img src='./images/support/icon_facebook.png'></a></div>" +
+            "<div class='col-2' id='cont-1'>" +
+            "<p>Tel: 054 904 2727</p></div>" +
+            "<div class='col-3' id='cont-2'>" +
+            "<p>3dprint.str@gmail.com</p></div>" +
+
+            "</div>" +
+            "<div class='col-2' id='cont-2'><a href='https://www.facebook.com/3DPrintman-458056418060551'><img src='./images/support/icon_facebook.png'></a></div>" +
             " <div id=\"mDeliv\" class=\"col-4\">\n" +
             "                    <a href=\"delivery.html\"> <p>Delivery and Payment</p></a>\n" +
             "                </div>\n"
